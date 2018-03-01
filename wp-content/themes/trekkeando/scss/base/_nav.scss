@@ -1,0 +1,122 @@
+/**
+  BASE -- NAV
+**/
+
+.navbar-nav {
+	@include ul-reset;
+
+	> li {
+
+		> a {
+			display: inline-block;
+			line-height: 40px;
+			position:relative;
+
+			&:after {
+				content:'';
+				position:absolute;
+				border-top:2px solid;
+				left: 0;
+				bottom: 0;
+				width:0;
+				transition:width .3s ease-out;
+			}
+		}
+
+		&.current a{
+			opacity:1!important;
+			&:after {
+				right:0;
+				width:auto!important;
+			}
+		}
+	}
+}
+.toggle-menu {
+	position:fixed;
+	right:15px;
+	bottom:15px;
+	border: none;
+	padding: 17px 13px;
+	background:$navbar-color;
+	border-radius:50%;
+	
+	.bar {
+		display: block; 
+		width:24px; 
+		height:2px;
+		background-color:$navbar-bg;
+
+		+ .bar {margin-top: 5px;}
+	}
+}
+
+@include media-breakpoint-up($uncollapsed-menu){
+	.header-menu {
+		display: inline-block;
+
+		> li {
+			display: inline-block;
+			padding:0 12px;
+
+			> a {
+				display: block;
+				line-height: 45px;
+				line-height: 45px;
+				text-transform: uppercase;
+				min-width:130px;
+
+				&:after {
+					left:0;
+				}
+				&:hover{
+					&:after {
+						width:100%;
+					}
+				}
+			}
+		}
+		.logo-spacer {width:246px;
+			a {display: none;}
+		}
+	}
+	.toggle-menu {display: none!important;}
+}
+
+@include media-breakpoint-down($collapsed-menu){
+	/*
+	/* OFFCANVAS MENU
+	/*/
+	.push-menu-body {
+	    /* overflow-x: hidden;
+	    position: relative;
+	    left: 0;
+	    //right: 0;
+	    width: 100%;
+	    height: 100%;
+	    transition: all 0.3s ease; */
+
+	    &.push-right {
+		    overflow: hidden;
+		    // left: 100%;
+		    .offcanvas-menu.left {left:0!important}
+		}
+	}
+	.offcanvas-menu {
+	    position: fixed;
+	    width: 100%;
+	    top:52px;
+	    bottom:0;
+	    z-index: 222;
+	    max-width: 100%;
+	    transition: all 0.3s ease;
+	    overflow-y: auto;
+	    background-color:$color-secondary;
+	    color:white;
+	    text-align: left;
+	    padding:6vh 22px;
+	}
+	#main-menu nav {
+		@include rem-units(font-size,26)
+	}
+}

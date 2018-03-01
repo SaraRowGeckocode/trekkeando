@@ -1,0 +1,53 @@
+/**
+  COMPONENT -- ARCHIVE - PAGINATION
+**/
+
+.pagination {
+  font-size: 0px;
+  margin: 30px 0 0;
+  margin: 1.875rem 0 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.pagination .page-numbers {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  color: #3d3d3d;
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin: 2px 1px;
+  margin: 0.125rem 0.0625rem;
+  padding: 9px 14px;
+  padding: 0.5625rem 0.875rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
+
+.pagination .page-numbers:hover {
+  background: #9b59b6;
+  color: #fff;
+}
+
+.pagination .current.page-numbers {
+  background: #9b59b6;
+  color: #fff;
+  font-weight: 700;
+}
+
+.pagination .prev.page-numbers:before,
+.pagination .next.page-numbers:after {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+.pagination .prev.page-numbers:before {
+  content: "\f053";
+}
+
+.pagination .next.page-numbers:after {
+  content: "\f054";
+}

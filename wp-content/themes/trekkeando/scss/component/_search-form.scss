@@ -1,0 +1,35 @@
+/**
+	COMPONENT -- SEARCH FORM
+**/
+.search-form {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	
+	.search-field {
+		border: 1px solid #f0f0f0;
+		height: 50px;
+		padding: 0 20px;
+		padding: 0 1.25rem;
+		text-align: left;
+		width: calc(100% - 60px);
+	}
+	
+	.search-submit {
+		float: right;
+		width: 60px;
+		height: 50px;
+		text-align: center;
+		
+		&:before {
+			@include icon-styles;
+			content: $icom-search;
+		}
+		&:hover {
+			background: #c9a0dc;
+		}
+
+	}
+}
+
+

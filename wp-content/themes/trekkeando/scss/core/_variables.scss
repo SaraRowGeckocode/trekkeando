@@ -1,0 +1,102 @@
+//
+//  General variables
+//
+$fonts-path: "fonts" !default;
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,800,900');
+@font-face {
+	font-family: 'trekkeando-icons';
+	src:
+		url('#{$fonts-path}/trekkeando-icons.ttf?d96kfm') format('truetype'),
+		url('#{$fonts-path}/trekkeando-icons.woff?d96kfm') format('woff'),
+		url('#{$fonts-path}/trekkeando-icons.svg?d96kfm#trekkeando-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$icons-font: 'trekkeando-icons' !default;
+$font-base: 'Raleway',sans-serif !default;
+$font-headlines: $font-base !default;
+$font-size-base: 1rem !default;
+$line-height-base: 1.27 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 300 !default;
+$font-weight-bold: 800 !default;
+
+// Colors
+$color-primary: #bc2324 !default;
+$color-secondary: #141515 !default;
+$color-gray-light: #606464 !default;
+$color-light: #ededed !default;
+
+$color-text: $color-secondary !default;
+$color-text-light: $color-gray-light !default;
+$body-bg: #ffffff !default;
+$color-link: $color-primary !default;
+$color-link-hover: darken($color-link,30%) !default;
+
+$border-style: solid 1px $color-light !default;
+
+// Responsive Breakpoints
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+) !default;
+$uncollapsed-menu: lg !default;
+$collapsed-menu: md !default;
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px
+) !default;
+
+// Grid columns
+$grid-columns:     12 !default;
+$gutter:           30px !default;
+
+// navbar
+$navbar-bg: $color-light !default;
+$navbar-color: $color-text !default;
+
+// icons
+$icom-activity: "\e900";
+$icom-alert-triangle: "\e901";
+$icom-award: "\e902";
+$icom-calendar: "\e920";
+$icom-camera: "\e921";
+$icom-chevron-down: "\e903";
+$icom-chevron-left: "\e904";
+$icom-chevron-right: "\e905";
+$icom-chevron-up: "\e906";
+$icom-clock: "\e907";
+$icom-compass: "\e91c";
+$icom-edit: "\e908";
+$icom-facebook: "\e909";
+$icom-hash: "\e90a";
+$icom-heart: "\e90b";
+$icom-help-circle: "\e90c";
+$icom-home: "\e90d";
+$icom-image: "\e90e";
+$icom-instagram: "\e922";
+$icom-linkedin: "\e90f";
+$icom-mail: "\e910";
+$icom-map-pin: "\e911";
+$icom-menu: "\e91d";
+$icom-message-square: "\e912";
+$icom-minus: "\e913";
+$icom-minus-circle: "\e914";
+$icom-navigation: "\e915";
+$icom-navigation-2: "\e916";
+$icom-phone: "\e917";
+$icom-play: "\e918";
+$icom-play-circle: "\e919";
+$icom-plus: "\e91a";
+$icom-plus-circle: "\e91b";
+$icom-search: "\e923";
+$icom-tag: "\e91e";
+$icom-x: "\e91f";

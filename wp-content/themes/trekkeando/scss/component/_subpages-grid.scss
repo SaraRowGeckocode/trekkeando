@@ -1,0 +1,20 @@
+/**
+	COMPONENT -- SUBPAGES GRID
+**/
+.subpages-grid {
+	@include ul-reset;
+	
+	@include media-breakpoint-up(md){
+		@include make-row;
+		margin: 0;
+
+		li {
+			@include make-col(6)
+		}
+	}
+	@include media-breakpoint-up(lg){
+		li {
+			@include make-col(4)
+		}
+	}
+}

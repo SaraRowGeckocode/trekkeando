@@ -1,0 +1,19 @@
+/**
+  ELEMENT -- BUTTONS
+**/
+button,.btn {
+	@include button($color-secondary, white, $color-secondary);
+}
+.btn-wire {
+	@include button(transparent, $color-primary, $color-primary);
+	
+	&.white {
+		border-color:#fff;
+		color:#fff;
+	}
+}
+
+.button-container {
+	text-align: center;
+	margin-top: 50px;
+}

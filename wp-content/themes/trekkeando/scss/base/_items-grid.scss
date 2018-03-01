@@ -1,0 +1,41 @@
+/**
+  BASE -- ITEMS GRID
+**/
+.items-grid {
+	@include ul-reset();
+	@include make-row();
+	
+	.col,.box {display: flex;}
+	.box {
+		flex-direction: column;
+		width:100%;
+		.inner {
+			flex: 1 1 auto;
+		}
+
+		.farmer {
+			@include rem-units(font-size,18);
+			color:$color-text-light;
+			
+			.grow {padding-left: 12px;}
+			.rounded-thumbnail {max-width:54px}
+			strong {
+				font-weight: $font-weight-normal;
+				color:$color-primary;
+				display: block;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(xs){
+		.box {
+			.button-right {display: block;
+				> .grow {padding:15px 0;
+					&:first-child {padding-top: 0;}
+					&:last-child {padding-bottom: 0;}
+				}
+				.btn {display: block;}
+			}
+		}
+	}
+}

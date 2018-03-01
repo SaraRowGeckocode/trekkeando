@@ -1,0 +1,166 @@
+/**
+  VENDOR -- NICE SELECT
+**/
+$font_size: 1rem !default;
+
+$input_border_radius: 2px !default;
+$input_height: 44px !default;
+$dropdown_padding: 10px !default;
+
+$gray: $color-text-light !default;
+$gray_light: $color-gray-light !default;
+$gray_lighter: #f6f6f6 !default;
+$primary_light: $gray !default;
+$arrow_color: $color-primary !default;
+
+// Style the dropdown
+.nice-select {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	background-color: #fff;
+	color:$gray;
+	border-radius: $input_border_radius;
+	border: solid 1px $gray_light; 
+	box-sizing: border-box;
+	clear: both;
+	cursor: pointer;
+	display: block;
+	font-family: inherit;
+	font-size: $font_size;
+	font-weight: normal;
+	height: $input_height;
+	line-height: $input_height - 2;
+	outline: none;
+	padding-left: $dropdown_padding;
+	padding-right: $dropdown_padding + $input_height;
+	position: relative;
+	text-align: left !important;
+	transition: all 0.2s ease-in-out;
+	user-select: none;
+	white-space: nowrap;
+	width: auto;
+	&:hover {
+		border-color: darken($gray_light, 5%);
+	}
+	&:active, &:focus {
+		@include input-hover-focus;
+	}
+	// Arrow
+	&:after { 
+		border-bottom: 1px solid $arrow_color;
+		border-right: 1px solid $arrow_color;
+		content: '';
+		display: block; 
+		height: 12px;
+		width: 12px;
+		margin-top: -8px;
+		pointer-events: none;
+		position: absolute; 
+		right: 17px; 
+		top: 50%; 
+		transform-origin: 66% 66%;
+		transform: rotate(45deg);
+		transition: all 0.15s ease-in-out;
+	}
+	// divider
+	&:before { 
+		content: '';
+		border-left: 1px solid $gray_light;
+		height: 100%;
+		pointer-events: none;
+		position: absolute; 
+		right: $input_height; 
+		top: 0; 
+	}
+	
+	&.open {
+		@extend :active;
+		&:after {
+			transform: rotate(-135deg);
+		}
+		.list {
+			opacity: 1;
+			pointer-events: auto;
+			transform: scale(1) translateY(0);
+		}
+	}
+	&.disabled {
+		border-color: lighten($gray_light, 2%);
+		color: $gray;
+		pointer-events: none;
+		&:after { 
+			border-color: lighten($arrow_color, 20%);
+		}
+	}
+	
+	// Modifiers
+	&.wide {
+		width: 100%;
+		.list {
+			left: 0 !important;
+			right: 0 !important;
+		}
+	}
+	&.right {
+		float: right;
+		.list {
+			left: auto;
+			right: 0;
+		}
+	}
+	
+	// List and options
+	.list {
+		background-color: #fff;
+		border-radius: $input_border_radius;
+		box-sizing: border-box;
+		margin-top: 4px;
+		opacity: 0;
+		overflow: hidden;
+		padding: 0;
+		pointer-events: none;
+		position: absolute;
+		top: 100%; left: 0;
+		transform-origin: 50% 0;
+		transform: scale(.75) translateY(- $input_height / 2);
+		transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+		z-index: 9;
+		&:hover .option:not(:hover) {
+			background-color: transparent !important;
+		}
+	}
+	.option {
+		cursor: pointer;
+		font-weight: 400;
+		line-height: $input_height - 2;
+		list-style: none;
+		min-height: $input_height - 2;
+		outline: none;
+		padding-left: $dropdown_padding;
+		padding-right: $dropdown_padding + 11;
+		text-align: left;
+		transition: all 0.2s;
+		&:hover, &.focus, &.selected.focus { 
+			background-color: $gray_lighter;
+		}
+		&.selected { 
+			font-weight: bold;
+		}
+		&.disabled {
+			background-color: transparent;
+			color: $gray;
+			cursor: default;
+		}
+	}
+}
+
+// Use display instead of opacity for IE <= 10
+.no-csspointerevents .nice-select {
+	.list {
+		display: none;
+	}
+	&.open {
+		.list {
+			display: block;
+		}
+	}
+}

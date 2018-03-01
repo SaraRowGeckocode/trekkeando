@@ -1,0 +1,48 @@
+/**
+  BASE -- HEADER
+**/
+
+header[role="banner"] {
+	color:$navbar-color;
+	text-align:center;
+	position:fixed;
+	width:100%;
+	z-index:1000;
+	font-weight: $font-weight-bold;
+
+	a {color:inherit}
+
+
+	@include media-breakpoint-up($uncollapsed-menu){
+		background-color:$navbar-bg;
+		@include rem-units(font-size,15);
+		box-shadow:0 0 2px rgba(0,0,0,.2);
+		padding:60px 0 0;
+		height:105px;
+		transition:background-color .3s ease-out;
+
+		.site-logo-wrapper {
+			position: absolute;
+			width:264px;
+			top:-4px;
+			left: 50%;
+			margin-left:-132px;
+
+			img {margin:0 auto; display: block;}
+		}
+
+		&.transparent {
+			background-color:transparent;
+			box-shadow:none;
+		}
+	}
+}
+
+// fixed header content top offset
+#content {
+	padding-top: 50px;
+
+	@include media-breakpoint-up($uncollapsed-menu){
+		padding-top: 105px;
+	}
+}

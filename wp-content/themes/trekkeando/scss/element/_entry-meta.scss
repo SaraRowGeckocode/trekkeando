@@ -1,0 +1,45 @@
+/**
+	ELEMENT -- ENTRY META
+**/
+
+.entry-meta {
+	color: $color-text-light;
+	@include rem-units(font-size,12);
+	text-transform: uppercase;
+	
+	> span {
+		display: inline-block;
+		margin: 0 15px 0 0;
+	}
+	a {color:inherit}
+	
+	.posted-on:before,
+	.post-edit-link-meta a:before,
+	.post-first-category:before {
+		@include icon-styles;
+		color: $color-primary;
+	}
+
+	.post-edit-link-meta a:before {
+		content: $icom-edit;
+	}
+	.posted-on:before {
+		content: $icom-clock;
+	}
+	.post-first-category:before {
+		content: $icom-tag;
+	}
+}
+
+
+
+
+/* Category and Tags */
+.cat-links-single:after,
+.logged-in .tags-links-single:after {
+	content: "\2022";
+	font-size: 12px;
+	font-size: 0.75rem;
+	margin: 0 0 0 7px;
+	margin: 0 0 0 0.4375rem;
+}

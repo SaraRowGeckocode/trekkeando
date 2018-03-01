@@ -1,0 +1,178 @@
+/**
+  ELEMENT -- IMAGES
+**/
+
+/*--------------------------------------------------------------
+13.1 Captions
+--------------------------------------------------------------*/
+/* Attachment Caption */
+.entry-caption {
+  color: #999;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-style: italic;
+  border: 1px solid #f0f0f0;
+  margin: 0;
+  padding: 10px;
+  padding: 0.625rem;
+  text-align: center;
+}
+
+/* WP Caption */
+.wp-caption {
+  border: 1px solid #f0f0f0;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+  max-width: 100%;
+}
+
+.wp-caption:last-child {
+  margin-bottom: 0;
+  margin-bottom: 0;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin: 0 auto;
+}
+
+.wp-caption .wp-caption-text {
+  color: #999;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-style: italic;
+  margin: 0;
+  padding: 5px;
+  padding: 0.3125rem;
+  text-align: center;
+}
+
+.wp-caption.alignright, .wp-caption.alignleft {
+  max-width: 110px;
+}
+
+.wp-caption.alignright {
+  margin: 0 0 15px 20px;
+  margin: 0 0 0.9375rem 1.25rem;
+}
+
+.wp-caption.alignleft {
+  margin: 0 20px 15px 0;
+  margin: 0 1.25rem 0.9375rem 0;
+}
+
+/*--------------------------------------------------------------
+13.2 Galleries
+--------------------------------------------------------------*/
+.gallery {
+  margin: 0 0 26px;
+  margin: 0 0 1.625rem;
+}
+
+.gallery .gallery-item {
+  display: inline-block;
+  padding: 1.79104477%;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+
+.gallery.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+
+.gallery.gallery-columns-3 .gallery-item {
+  max-width: 33.33%;
+}
+
+.gallery.gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+
+.gallery.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+
+.gallery.gallery-columns-6 .gallery-item {
+  max-width: 16.66%;
+}
+
+.gallery.gallery-columns-7 .gallery-item {
+  max-width: 14.28%;
+}
+
+.gallery.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+
+.gallery.gallery-columns-9 .gallery-item {
+  max-width: 11.11%;
+}
+
+.gallery .gallery-icon img {
+  margin: 0 auto;
+}
+
+.gallery .gallery-caption {
+  color: #999;
+  display: block;
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding: 5px 0;
+  padding: 0.3125rem 0;
+}
+
+.gallery.gallery-columns-4 .gallery-caption,
+.gallery.gallery-columns-5 .gallery-caption,
+.gallery.gallery-columns-6 .gallery-caption,
+.gallery.gallery-columns-7 .gallery-caption,
+.gallery.gallery-columns-8 .gallery-caption,
+.gallery.gallery-columns-9 .gallery-caption {
+  display: none;
+}
+
+.gallery:last-child {
+  margin: 0;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+13.3 Media Elements
+--------------------------------------------------------------*/
+.hentry .mejs-container {
+  margin: 0 0 26px;
+  margin: 0 0 1.625rem;
+}
+
+.hentry .mejs-mediaelement,
+.hentry .mejs-container .mejs-controls {
+  background: #333;
+}
+
+.hentry .mejs-controls .mejs-time-rail .mejs-time-loaded,
+.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+  background: #fff;
+}
+
+.hentry .mejs-controls .mejs-time-rail .mejs-time-current {
+  background: #c9a0dc;
+}
+
+.hentry .mejs-controls .mejs-time-rail .mejs-time-total,
+.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
+  background: rgba(255, 255, 255, 0.33);
+}
+
+.hentry .mejs-container .mejs-controls .mejs-time {
+  padding-top: 9px;
+}
+
+.hentry .mejs-controls .mejs-time-rail span,
+.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total,
+.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+  border-radius: 0;
+}
+
+.hentry .mejs-overlay-loading {
+  background: transparent;
+}

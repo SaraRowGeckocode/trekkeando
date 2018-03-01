@@ -1,0 +1,208 @@
+@import "variables";
+
+@font-face {
+  font-family: 'trekkeando-icons';
+  src:
+    url('#{$icomoon-font-path}/trekkeando-icons.ttf?ds4dhm') format('truetype'),
+    url('#{$icomoon-font-path}/trekkeando-icons.woff?ds4dhm') format('woff'),
+    url('#{$icomoon-font-path}/trekkeando-icons.svg?ds4dhm#trekkeando-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icom-"], [class*=" icom-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'trekkeando-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icom-activity {
+  &:before {
+    content: $icom-activity; 
+  }
+}
+.icom-alert-triangle {
+  &:before {
+    content: $icom-alert-triangle; 
+  }
+}
+.icom-award {
+  &:before {
+    content: $icom-award; 
+  }
+}
+.icom-calendar {
+  &:before {
+    content: $icom-calendar; 
+  }
+}
+.icom-camera {
+  &:before {
+    content: $icom-camera; 
+  }
+}
+.icom-chevron-down {
+  &:before {
+    content: $icom-chevron-down; 
+  }
+}
+.icom-chevron-left {
+  &:before {
+    content: $icom-chevron-left; 
+  }
+}
+.icom-chevron-right {
+  &:before {
+    content: $icom-chevron-right; 
+  }
+}
+.icom-chevron-up {
+  &:before {
+    content: $icom-chevron-up; 
+  }
+}
+.icom-clock {
+  &:before {
+    content: $icom-clock; 
+  }
+}
+.icom-compass {
+  &:before {
+    content: $icom-compass; 
+  }
+}
+.icom-edit-3 {
+  &:before {
+    content: $icom-edit-3; 
+  }
+}
+.icom-facebook {
+  &:before {
+    content: $icom-facebook; 
+  }
+}
+.icom-hash {
+  &:before {
+    content: $icom-hash; 
+  }
+}
+.icom-heart {
+  &:before {
+    content: $icom-heart; 
+  }
+}
+.icom-help-circle {
+  &:before {
+    content: $icom-help-circle; 
+  }
+}
+.icom-home {
+  &:before {
+    content: $icom-home; 
+  }
+}
+.icom-image {
+  &:before {
+    content: $icom-image; 
+  }
+}
+.icom-instagram {
+  &:before {
+    content: $icom-instagram; 
+  }
+}
+.icom-linkedin {
+  &:before {
+    content: $icom-linkedin; 
+  }
+}
+.icom-mail {
+  &:before {
+    content: $icom-mail; 
+  }
+}
+.icom-map-pin {
+  &:before {
+    content: $icom-map-pin; 
+  }
+}
+.icom-menu {
+  &:before {
+    content: $icom-menu; 
+  }
+}
+.icom-message-square {
+  &:before {
+    content: $icom-message-square; 
+  }
+}
+.icom-minus {
+  &:before {
+    content: $icom-minus; 
+  }
+}
+.icom-minus-circle {
+  &:before {
+    content: $icom-minus-circle; 
+  }
+}
+.icom-navigation {
+  &:before {
+    content: $icom-navigation; 
+  }
+}
+.icom-navigation-2 {
+  &:before {
+    content: $icom-navigation-2; 
+  }
+}
+.icom-phone {
+  &:before {
+    content: $icom-phone; 
+  }
+}
+.icom-play {
+  &:before {
+    content: $icom-play; 
+  }
+}
+.icom-play-circle {
+  &:before {
+    content: $icom-play-circle; 
+  }
+}
+.icom-plus {
+  &:before {
+    content: $icom-plus; 
+  }
+}
+.icom-plus-circle {
+  &:before {
+    content: $icom-plus-circle; 
+  }
+}
+.icom-search {
+  &:before {
+    content: $icom-search; 
+  }
+}
+.icom-tag {
+  &:before {
+    content: $icom-tag; 
+  }
+}
+.icom-x {
+  &:before {
+    content: $icom-x; 
+  }
+}
+

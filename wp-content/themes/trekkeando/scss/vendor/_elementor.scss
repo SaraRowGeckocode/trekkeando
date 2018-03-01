@@ -1,0 +1,20 @@
+/**
+  VENDOR -- ELEMENTOR
+**/
+.elementor {
+
+	// button
+	.elementor-button {
+		border-radius:0;
+		background-color: $color-secondary;
+
+		&.elementor-size-sm {
+			@include button($color-secondary, white, $color-secondary);
+		}
+	}
+
+	// separator
+	.elementor-widget-divider .elementor-divider-separator {
+		border-top-color:$color-primary;
+	}
+}

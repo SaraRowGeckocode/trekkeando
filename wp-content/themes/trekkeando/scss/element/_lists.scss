@@ -1,0 +1,28 @@
+/**
+  ELEMENT -- LISTS
+**/
+/* ul {
+	@include ul-style();
+} */
+.list-inline {
+	@include ul-inline;
+}
+ol.show-numbers {
+	@include ul-reset();
+	counter-reset: ordered-list;
+
+	> li:before {
+		content: counter(ordered-list);
+		counter-increment: ordered-list;
+		display: block;
+		font-weight:$font-weight-bold;
+		color:$color-primary;
+		@include rem-units(font-size,24);
+		line-height:32px;
+		width:40px;
+		height:40px;
+		border:3px solid;
+		border-radius:50%;
+		text-align: center;
+	}
+}

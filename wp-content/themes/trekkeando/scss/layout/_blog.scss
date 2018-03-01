@@ -1,0 +1,15 @@
+/**
+	LAYOUT -- BLOG
+**/
+
+.blog-layout {
+	
+	@include media-breakpoint-up(md){
+		.site-main {
+			@include make-col(9);
+		}
+		.sidebar-area {
+			@include make-col(3);
+		}
+	}
+}

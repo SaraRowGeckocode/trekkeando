@@ -1,0 +1,130 @@
+
+
+@mixin old-clearfix {
+	&:before,
+	&:after {
+		content: "";    
+		display: block;    
+		height: 0;    
+	}
+
+	&:after { clear: both; }
+	zoom: 1; /* IE < 8 */
+}
+
+@mixin ul-style {
+	padding-left: 15px;
+	list-style:none;
+
+	> li {position: relative;
+		&:before {
+			content:'';
+			width: 0.37em;
+			height: 0.37em;
+			background-color:$color-primary;
+			border-radius:50%;
+			position:absolute;
+			left:-15px;
+			top:0.47em;
+		}
+	}
+}
+@mixin ul-reset {
+	list-style:none;
+	padding:0;
+	margin-bottom:0;
+		
+	> li {
+		margin:0;
+		&:before {display: none;}
+	}
+}
+@mixin ul-inline {
+	@include ul-reset;
+		
+	> li {
+		display: inline-block;
+		margin-right:10px;
+
+		a {display: block;}
+	}
+}
+
+@mixin button($bg:$color-link, $color:#fff, $border:$color-link) {
+	display:inline-block;
+	background:$bg;
+	border:1px solid $border;
+	padding:1em 1.8em;
+	color:$color;
+	font-weight:$font-weight-bold;
+	font-size:.88rem;
+	line-height:1;
+	text-align:center;
+	text-decoration:none;
+	text-transform: uppercase;
+	letter-spacing: 0.07rem;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background:lighten($bg,10%);
+	}
+}
+
+@mixin input-hover-focus {
+	box-shadow: 0 0 3px rgba(206, 72, 25, 0.2);
+}
+
+@mixin icon-styles {
+	font-family: $icons-font !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin undo-flex {
+	display: block;
+	.grow {padding: 0;}
+	.btn {
+		margin-top: 14px;
+		width:100%;
+	}
+}
+
+
+// REM
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-units($property, $values...) {
+	$max: length($values);
+	$pxValues: '';
+	$remValues: '';
+
+	@for $i from 1 through $max {
+		$value: strip-unit(nth($values, $i));
+		$pxValues: #{$pxValues + $value}px;
+
+		@if $i < $max {
+			$pxValues: #{$pxValues + " "};
+		}
+	} 
+
+	@for $i from 1 through $max {
+		$value: strip-unit(nth($values, $i));
+		$remValues: #{$remValues + $value / 16}rem;
+
+		@if $i < $max {
+			$remValues: #{$remValues + " "};
+		}
+	} 
+
+	#{$property}: $pxValues; 
+	#{$property}: $remValues; 
+}
