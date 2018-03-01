@@ -10,6 +10,7 @@ body {
 	background-color: $body-bg; // 2
 	letter-spacing:.03em;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 p {
@@ -28,6 +29,9 @@ h1, h2, h3, h4, h5, h6, .headline {
 	font-weight:$font-weight-bold;
 	line-height:1em;
 	color:$color-text;
+	text-transform: uppercase;
+
+	strong {font-weight:$font-weight-heavy;}
 }
 
 h1 {
@@ -55,7 +59,7 @@ h6 {
 	@include rem-units(font-size,19);
 }
 
-
+strong, b {font-weight:$font-weight-medium;}
 a,button {
 	color:$color-link;
 	text-decoration:none;

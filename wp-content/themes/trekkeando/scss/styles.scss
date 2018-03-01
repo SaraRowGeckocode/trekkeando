@@ -27,6 +27,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "base/footer";
 @import "base/items-grid";
 @import "base/utilities";
+@import "base/form";
 
 
 /**
@@ -51,6 +52,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /**
   Layout
 **/
+@import "layout/base";
 @import "layout/home";
 @import "layout/blog";
 @import "layout/post";
@@ -65,3 +67,4 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "component/search-form";
 @import "component/tag-cloud";
 @import "component/subpages-grid";
+@import "component/contact-form";

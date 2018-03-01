@@ -3,7 +3,7 @@
 //
 $fonts-path: "fonts" !default;
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,800,900');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,600,800,900');
 @font-face {
 	font-family: 'trekkeando-icons';
 	src:
@@ -21,16 +21,19 @@ $font-size-base: 1rem !default;
 $line-height-base: 1.27 !default;
 $font-weight-light: 300 !default;
 $font-weight-normal: 300 !default;
+$font-weight-medium: 600 !default;
 $font-weight-bold: 800 !default;
+$font-weight-heavy: 900 !default;
 
 // Colors
 $color-primary: #bc2324 !default;
 $color-secondary: #141515 !default;
-$color-gray-light: #606464 !default;
+$color-gray: #606464 !default;
+$color-gray-light: lighten($color-gray,40%) !default;
 $color-light: #ededed !default;
 
 $color-text: $color-secondary !default;
-$color-text-light: $color-gray-light !default;
+$color-text-light: $color-gray !default;
 $body-bg: #ffffff !default;
 $color-link: $color-primary !default;
 $color-link-hover: darken($color-link,30%) !default;

@@ -1,0 +1,13 @@
+/**
+	LAYOUT -- BASE
+**/
+
+html, body {height:100%}
+body {
+	// footer always at bottom
+	display:flex;
+	flex-direction:column;
+	.site-content {flex:1}
+}
+
+.error-404 {padding:15vh 0 20vh}

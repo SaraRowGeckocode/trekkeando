@@ -75,6 +75,7 @@
 .bg-dark {background-color:$color-secondary}
 
 
+
 /* responsive display */
 @include media-breakpoint-up($uncollapsed-menu){
 	.mobile-only {display: none!important;}

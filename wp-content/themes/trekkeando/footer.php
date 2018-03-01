@@ -7,20 +7,21 @@
  * @package Trekkeando
  */
 ?>
+	</div><!-- /site-content -->
 
-	</div><!-- #content -->
+	<?php 
+	if ( function_exists( 'hfe_render_footer' ) ) {
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php
-		// Site Info
-		get_template_part( 'template-parts/site-info' );
-		?>
-	</footer><!-- #colophon -->
+		hfe_render_footer();
+		
+	} else {
+		echo '<footer><p>&copy; '. date('Y') .' '. get_bloginfo('name') .'. '. __('All rights reserved.', 'row_themes') .'</p></footer>';
+	} ?>
 
-</div><!-- #page .site-wrapper -->
 
-<div class="overlay-effect"></div><!-- .overlay-effect -->
+	<div class="overlay"></div>
+	
+	<?php wp_footer(); ?>
 
-<?php wp_footer(); ?>
 </body>
 </html>

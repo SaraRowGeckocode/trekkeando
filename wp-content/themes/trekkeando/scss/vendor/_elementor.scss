@@ -18,3 +18,10 @@
 		border-top-color:$color-primary;
 	}
 }
+
+.elementor-editor-active {
+	#topbar {
+		opacity:.5;
+		pointer-events:none;
+	}
+}

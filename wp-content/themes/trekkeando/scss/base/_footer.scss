@@ -2,56 +2,14 @@
   BASE -- FOOTER
 **/
 
-footer[role="contentinfo"] {
-	background-color:$color-secondary;
+footer[role="contentinfo"],
+.single-elementor-hf.elementor-editor-active .elementor {
+	background-color:$color-gray;
 	color:white;
-	text-align: center;
-	padding-top: 40px;
 	
-	.logo {max-height:60px; margin-bottom: 50px;}
-	a {color:inherit;
-		&:hover {color:$color-primary}
-	}
-	ul {@include ul-reset;}
-	.title {
-		font-weight: $font-weight-bold;
-		@include rem-units(font-size,22);
-		margin-bottom: 20px;
-	}
-	.col img {
-		width:100%;
-		max-width:150px;
-	}
-
-	.bottom-bar {
-		padding:90px 0 8px;
-		@include rem-units(font-size,14);
-	}
-
-	.list-inline {
-		@include rem-units(font-size,32);
-
-		> li {margin:0 8px}
-	}
-
-	@include media-breakpoint-down(md){
-		padding-top: 30px;
-		.col {
-			@include make-col(6);
-			margin-bottom: 40px;
-		}
-		.bottom-bar {
-			padding-top:0;
-		}
-	}
-	@include media-breakpoint-down(sm){
-		@include rem-units(font-size,16);
-
-		.title {@include rem-units(font-size,18);}
-		.list-inline {
-			@include rem-units(font-size,26);
-
-			> li {margin:0 4px}
-		}
+	@include media-breakpoint-up(lg){
+		.elementor-column {order:3}
+		.desktop-2 {order:2}
+		.desktop-1 {order:1}
 	}
 }

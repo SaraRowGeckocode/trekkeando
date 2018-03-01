@@ -63,11 +63,13 @@
 	text-decoration:none;
 	text-transform: uppercase;
 	letter-spacing: 0.07rem;
+	transition:all .3s ease-out;
 
 	&:hover,
 	&:active,
 	&:focus {
 		background:lighten($bg,10%);
+		color:$color;
 	}
 }
 

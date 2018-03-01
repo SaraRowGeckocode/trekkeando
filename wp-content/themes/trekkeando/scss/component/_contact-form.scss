@@ -1,0 +1,36 @@
+/**
+  COMPONENT -- CONTACT FORM
+**/
+.form-card {
+    position:relative;
+    
+    .elementor-widget,
+    .elementor-widget-wrap {position:static}
+    .btn {
+        position:absolute;
+        bottom:0;
+        right:0
+    }
+    
+    .form-group:last-child,
+    .message-group {margin-bottom: 0;}
+    textarea.form-control {
+        border:none;
+        height: 200px;
+    }
+
+    .ajax-loader {display: none!important;}
+
+    @include media-breakpoint-up(md){
+        .row {
+            margin-left: -48px;
+            margin-right: -48px;
+        }
+        .col {
+            @include make-col(6);
+            padding:0 48px;
+
+            + .col {border-left:1px solid $color-gray-light}
+        }
+    }
+}
