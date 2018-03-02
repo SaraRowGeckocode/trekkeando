@@ -9,84 +9,6 @@
 	margin: 0;
 }
 
-/* Entry Post Thumbnail */
-.entry-image-wrapper {
-	margin: 0 0 30px;
-	margin: 0 0 1.875rem;
-}
-
-.entry-image-wrapper img {
-	margin: 0 auto;
-}
-
-/* Page Content Block */
-.page-content {
-	background: #fff;
-	margin: 0;
-	padding: 15px;
-	padding: 0.9375rem;
-	position: relative;
-	word-wrap: break-word;
-}
-
-/* Entry Header & Title (Posts,Pages) */
-.entry-header-wrapper {
-	margin: 0 0 15px;
-	margin: 0 0 0.9375rem;
-}
-
-.entry-header {
-	margin: 0 0 10px;
-	margin: 0 0 0.625rem;
-	padding: 0;
-}
-
-.entry-title {
-	clear: none;
-	font-size: 23px;
-	font-size: 1.4375rem;
-	line-height: 1.2;
-	margin: 0;
-	padding: 0;
-	word-wrap: break-word;
-}
-
-/* Page Header & Title */
-.page-header {
-	background: #fff;
-	margin: 0 0 15px;
-	margin: 0 0 0.9375rem;
-	padding: 15px;
-	padding: 0.9375rem;
-	position: relative;
-}
-
-.page-header .page-title {
-	clear: none;
-	font-size: 23px;
-	font-size: 1.4375rem;
-	line-height: 1.2;
-	margin: 0;
-	padding: 0;
-	word-wrap: break-word;
-}
-
-.page-header .page-title span {
-	color: #9b59b6;
-}
-
-.page-header .taxonomy-description {
-	color: #999;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	margin: 5px 0 0;
-	margin: 0.3125rem 0 0;
-}
-
-.page-header .taxonomy-description p {
-	font-size: 15px;
-	font-size: 0.9375rem;
-}
 
 /* Entry Summary */
 .entry-summary,
@@ -106,22 +28,6 @@
 	word-wrap: break-word;
 }
 
-/* Entry Content Attachment */
-.entry-content-attachment {
-	font-size: 15px;
-	font-size: 0.9375rem;
-	line-height: 1.5;
-	margin: 0;
-	padding: 0;
-	word-wrap: break-word;
-}
-
-/* Entry Attachment */
-.entry-attachment {
-	margin: 0 0 30px;
-	margin: 0 0 1.875rem;
-}
-
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
@@ -129,30 +35,4 @@
 	margin-bottom: 0;
 	margin-top: 0;
 	padding: 0;
-}
-
-
-
-@media (min-width: 576px) {
-	.post-content-wrapper-archive {
-		-webkit-box-align: center;
-				-ms-flex-align: center;
-						align-items: center;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: justify;
-				-ms-flex-pack: justify;
-						justify-content: space-between;
-	}
-	.post-content-wrapper-archive .entry-data-wrapper-archive {
-		width: calc( 100% - 135px);
-	}
-	.hentry:not(.has-post-thumbnail) .post-content-wrapper-archive .entry-data-wrapper-archive {
-		width: 100%;
-	}
-	.post-content-wrapper-archive .entry-image-wrapper-archive {
-		margin: 0;
-		width: 120px;
-	}
 }

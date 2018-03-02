@@ -32,6 +32,10 @@ h1, h2, h3, h4, h5, h6, .headline {
 	text-transform: uppercase;
 
 	strong {font-weight:$font-weight-heavy;}
+	a {color:inherit;
+		&:hover,
+		&:active {color:$color-primary}
+	}
 }
 
 h1 {

@@ -1,9 +1,10 @@
 <?php
 namespace RowElementorWidgets;
 
-// use RowElementorWidgets\Widgets\Hello_World;
-// use RowElementorWidgets\Widgets\Inline_Editing;
-use RowElementorWidgets\Widgets\Continue_Reading;
+
+use RowElementorWidgets\Widgets\Row_Widgets_Subpages_Grid;
+use RowElementorWidgets\Widgets\Row_Widgets_Related_Content;
+
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -116,6 +117,7 @@ class Plugin {
 	 */
 	private function includes() {
         require_once __DIR__ . '/widgets/subpages-grid.php';
+        require_once __DIR__ . '/widgets/related-content.php';
 	}
 
 	/**
@@ -129,6 +131,7 @@ class Plugin {
 		$widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
 
 		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Subpages_Grid() );
+		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Related_Content() );
 
 		$remove_widgets = array(
 			//'counter',

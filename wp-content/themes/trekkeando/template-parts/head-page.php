@@ -9,13 +9,18 @@
 
 
 <div class="page-head">
-	<?php if ( SR_has_post_edit_link() ) : ?>
-		<div class="entry-meta entry-meta-single">
-			<?php SR_post_edit_link(); ?>
-		</div><!-- .entry-meta -->
-	<?php endif; ?>
+	<div class="background-overlay"></div>
 
-	<?php the_title( '<h1 class="entry-title entry-title-single">', '</h1>' ); ?>
+	<div class="container">
+		
+		<?php 
+		if(is_home()){
+			echo '<h1 class="entry-title entry-title-single">'. get_the_title( get_option('page_for_posts') ) .'</h1>';
+		} else {
+			the_title( '<h1 class="entry-title entry-title-single">', '</h1>' );
+		} ?>
+
+	</div>
 
 </div><!-- .entry-header-wrapper -->
 

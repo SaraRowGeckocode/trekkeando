@@ -11,3 +11,38 @@ body {
 }
 
 .error-404 {padding:15vh 0 20vh}
+
+
+/* page head */
+.page-head {
+	color:white;
+	text-shadow:0 0 15px rgba(0,0,0,.3);
+	text-align:center;
+	background-image:url('images/bg-contact.jpg');
+	background-position:center;
+	background-size:cover;
+	position:relative;
+
+	>.background-overlay,
+	>.elementor-background-overlay {
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		background-color: #000000;
+    	opacity: 0.1;
+	}
+	
+	.elementor-container,
+	.container {
+		min-height:30vh;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+	}
+	.elementor-heading-title,
+	.entry-title {
+		color:inherit;
+	}
+}

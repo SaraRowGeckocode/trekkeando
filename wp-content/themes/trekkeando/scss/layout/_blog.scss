@@ -2,6 +2,9 @@
 	LAYOUT -- BLOG
 **/
 
+body.blog {
+	background-color:$color-light;
+}
 .blog-layout {
 	
 	@include media-breakpoint-up(md){
