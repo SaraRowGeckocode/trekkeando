@@ -1,0 +1,4 @@
+// icomoon
+@function unicode($str) {
+  @return unquote("\"") + $str + unquote("\"");
+}

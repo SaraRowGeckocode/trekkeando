@@ -137,9 +137,9 @@ class Row_Widgets_Related_Content extends Widget_Base {
 			<p class="headline"><span data-elementor-setting-key="title">{{{ settings.title }}}</span></p>
 
 			<ul>
-				<li class="item"></li>
-				<li class="item"></li>
-				<li class="item"></li>
+				<li class="item"><div></div></li>
+				<li class="item"><div></div></li>
+				<li class="item"><div></div></li>
 			</ul>
 		</aside>
 

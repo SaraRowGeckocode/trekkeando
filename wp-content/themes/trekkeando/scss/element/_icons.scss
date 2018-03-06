@@ -9,181 +9,356 @@
 
 .icom-activity {
   &:before {
-    content: $icom-activity; 
+    content: unicode($icom-activity); 
   }
 }
 .icom-alert-triangle {
   &:before {
-    content: $icom-alert-triangle; 
+    content: unicode($icom-alert-triangle); 
+  }
+}
+.icom-arrow-down-circle {
+  &:before {
+    content: unicode($icom-arrow-down-circle); 
+  }
+}
+.icom-arrow-left-circle {
+  &:before {
+    content: unicode($icom-arrow-left-circle); 
+  }
+}
+.icom-arrow-right-circle {
+  &:before {
+    content: unicode($icom-arrow-right-circle); 
+  }
+}
+.icom-arrow-up-circle {
+  &:before {
+    content: unicode($icom-arrow-up-circle); 
+  }
+}
+.icom-at-sign {
+  &:before {
+    content: unicode($icom-at-sign); 
   }
 }
 .icom-award {
   &:before {
-    content: $icom-award; 
+    content: unicode($icom-award); 
+  }
+}
+.icom-battery-charging {
+  &:before {
+    content: unicode($icom-battery-charging); 
+  }
+}
+.icom-bell {
+  &:before {
+    content: unicode($icom-bell); 
   }
 }
 .icom-calendar {
   &:before {
-    content: $icom-calendar; 
+    content: unicode($icom-calendar); 
   }
 }
 .icom-camera {
   &:before {
-    content: $icom-camera; 
+    content: unicode($icom-camera); 
+  }
+}
+.icom-check {
+  &:before {
+    content: unicode($icom-check); 
+  }
+}
+.icom-check-square {
+  &:before {
+    content: unicode($icom-check-square); 
   }
 }
 .icom-chevron-down {
   &:before {
-    content: $icom-chevron-down; 
+    content: unicode($icom-chevron-down); 
   }
 }
 .icom-chevron-left {
   &:before {
-    content: $icom-chevron-left; 
+    content: unicode($icom-chevron-left); 
   }
 }
 .icom-chevron-right {
   &:before {
-    content: $icom-chevron-right; 
+    content: unicode($icom-chevron-right); 
   }
 }
 .icom-chevron-up {
   &:before {
-    content: $icom-chevron-up; 
+    content: unicode($icom-chevron-up); 
+  }
+}
+.icom-clipboard {
+  &:before {
+    content: unicode($icom-clipboard); 
   }
 }
 .icom-clock {
   &:before {
-    content: $icom-clock; 
+    content: unicode($icom-clock); 
   }
 }
 .icom-compass {
   &:before {
-    content: $icom-compass; 
+    content: unicode($icom-compass); 
+  }
+}
+.icom-droplet {
+  &:before {
+    content: unicode($icom-droplet); 
   }
 }
 .icom-edit {
   &:before {
-    content: $icom-edit; 
+    content: unicode($icom-edit); 
+  }
+}
+.icom-eye {
+  &:before {
+    content: unicode($icom-eye); 
   }
 }
 .icom-facebook {
   &:before {
-    content: $icom-facebook; 
+    content: unicode($icom-facebook); 
+  }
+}
+.icom-flag {
+  &:before {
+    content: unicode($icom-flag); 
   }
 }
 .icom-hash {
   &:before {
-    content: $icom-hash; 
+    content: unicode($icom-hash); 
   }
 }
 .icom-heart {
   &:before {
-    content: $icom-heart; 
+    content: unicode($icom-heart); 
   }
 }
 .icom-help-circle {
   &:before {
-    content: $icom-help-circle; 
+    content: unicode($icom-help-circle); 
   }
 }
 .icom-home {
   &:before {
-    content: $icom-home; 
+    content: unicode($icom-home); 
   }
 }
 .icom-image {
   &:before {
-    content: $icom-image; 
+    content: unicode($icom-image); 
+  }
+}
+.icom-info {
+  &:before {
+    content: unicode($icom-info); 
   }
 }
 .icom-instagram {
   &:before {
-    content: $icom-instagram; 
+    content: unicode($icom-instagram); 
   }
 }
 .icom-linkedin {
   &:before {
-    content: $icom-linkedin; 
+    content: unicode($icom-linkedin); 
   }
 }
 .icom-mail {
   &:before {
-    content: $icom-mail; 
+    content: unicode($icom-mail); 
+  }
+}
+.icom-map {
+  &:before {
+    content: unicode($icom-map); 
   }
 }
 .icom-map-pin {
   &:before {
-    content: $icom-map-pin; 
+    content: unicode($icom-map-pin); 
   }
 }
 .icom-menu {
   &:before {
-    content: $icom-menu; 
+    content: unicode($icom-menu); 
   }
 }
 .icom-message-square {
   &:before {
-    content: $icom-message-square; 
+    content: unicode($icom-message-square); 
   }
 }
 .icom-minus {
   &:before {
-    content: $icom-minus; 
+    content: unicode($icom-minus); 
   }
 }
 .icom-minus-circle {
   &:before {
-    content: $icom-minus-circle; 
+    content: unicode($icom-minus-circle); 
+  }
+}
+.icom-moon {
+  &:before {
+    content: unicode($icom-moon); 
+  }
+}
+.icom-music {
+  &:before {
+    content: unicode($icom-music); 
   }
 }
 .icom-navigation {
   &:before {
-    content: $icom-navigation; 
+    content: unicode($icom-navigation); 
   }
 }
 .icom-navigation-2 {
   &:before {
-    content: $icom-navigation-2; 
+    content: unicode($icom-navigation-2); 
   }
 }
 .icom-phone {
   &:before {
-    content: $icom-phone; 
+    content: unicode($icom-phone); 
   }
 }
 .icom-play {
   &:before {
-    content: $icom-play; 
+    content: unicode($icom-play); 
   }
 }
 .icom-play-circle {
   &:before {
-    content: $icom-play-circle; 
+    content: unicode($icom-play-circle); 
   }
 }
 .icom-plus {
   &:before {
-    content: $icom-plus; 
+    content: unicode($icom-plus); 
   }
 }
 .icom-plus-circle {
   &:before {
-    content: $icom-plus-circle; 
+    content: unicode($icom-plus-circle); 
   }
 }
 .icom-search {
   &:before {
-    content: $icom-search; 
+    content: unicode($icom-search); 
+  }
+}
+.icom-send {
+  &:before {
+    content: unicode($icom-send); 
+  }
+}
+.icom-settings {
+  &:before {
+    content: unicode($icom-settings); 
+  }
+}
+.icom-shield {
+  &:before {
+    content: unicode($icom-shield); 
+  }
+}
+.icom-shopping-cart {
+  &:before {
+    content: unicode($icom-shopping-cart); 
+  }
+}
+.icom-star {
+  &:before {
+    content: unicode($icom-star); 
+  }
+}
+.icom-sun {
+  &:before {
+    content: unicode($icom-sun); 
   }
 }
 .icom-tag {
   &:before {
-    content: $icom-tag; 
+    content: unicode($icom-tag); 
+  }
+}
+.icom-target {
+  &:before {
+    content: unicode($icom-target); 
+  }
+}
+.icom-thermometer {
+  &:before {
+    content: unicode($icom-thermometer); 
+  }
+}
+.icom-thumbs-up {
+  &:before {
+    content: unicode($icom-thumbs-up); 
+  }
+}
+.icom-trending-down {
+  &:before {
+    content: unicode($icom-trending-down); 
+  }
+}
+.icom-trending-up {
+  &:before {
+    content: unicode($icom-trending-up); 
+  }
+}
+.icom-twitter {
+  &:before {
+    content: unicode($icom-twitter); 
+  }
+}
+.icom-user {
+  &:before {
+    content: unicode($icom-user); 
+  }
+}
+.icom-users {
+  &:before {
+    content: unicode($icom-users); 
+  }
+}
+.icom-video {
+  &:before {
+    content: unicode($icom-video); 
+  }
+}
+.icom-watch {
+  &:before {
+    content: unicode($icom-watch); 
+  }
+}
+.icom-wind {
+  &:before {
+    content: unicode($icom-wind); 
   }
 }
 .icom-x {
   &:before {
-    content: $icom-x; 
+    content: unicode($icom-x); 
+  }
+}
+.icom-zap {
+  &:before {
+    content: unicode($icom-zap); 
   }
 }
