@@ -52,6 +52,11 @@ function SR_setup() {
 	 */
 	add_theme_support( 'post-thumbnails', array('post') );
 
+	/*
+	 * Enable support for Post Formats.
+	 */
+	add_theme_support( 'post-formats', array( 'quote', 'video' ) );
+
 	// Theme Image Sizes
 	add_image_size('portfolio',         380,380,true);
 	add_image_size('portfolio2x',       760,760,true); //380,380 retina

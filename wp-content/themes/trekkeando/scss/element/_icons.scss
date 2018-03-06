@@ -132,6 +132,11 @@
     content: unicode($icom-facebook); 
   }
 }
+.icom-feather {
+  &:before {
+    content: unicode($icom-feather); 
+  }
+}
 .icom-flag {
   &:before {
     content: unicode($icom-flag); 

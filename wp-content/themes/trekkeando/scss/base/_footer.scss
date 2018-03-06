@@ -6,6 +6,15 @@ footer[role="contentinfo"],
 .single-elementor-hf.elementor-editor-active .elementor {
 	background-color:$color-gray;
 	color:white;
+
+	a {color:inherit;
+		&:hover,
+		&:focus,
+		&:active {
+			opacity:.6;
+			color:inherit;
+		}
+	}
 	
 	@include media-breakpoint-up(lg){
 		.elementor-column {order:3}

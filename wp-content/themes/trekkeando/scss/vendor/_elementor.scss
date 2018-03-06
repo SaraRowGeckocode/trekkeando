@@ -5,17 +5,17 @@
 .elementor-section {
 	background-position:center;
 	background-size:cover;
-	padding-top:80px;
-	padding-bottom: 80px;
+	padding-top:40px;
+	padding-bottom:40px;
 
 	.elementor-section {
 		padding-top: 0;
 		padding-bottom: 0;
 	}
 
-	@include media-breakpoint-down(xs){
-		padding-top:40px;
-		padding-bottom: 40px;
+	@include media-breakpoint-up(sm){
+		padding-top:80px;
+		padding-bottom:80px;
 	}
 
 	// container
@@ -32,6 +32,7 @@
 .elementor-row {
 	margin-right: ($gutter / -2);
 	margin-left: ($gutter / -2);
+	width: calc(100% + #{$gutter});
 }
 .elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated {
 	padding-right: ($gutter / 2);

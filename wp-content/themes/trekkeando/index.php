@@ -24,7 +24,7 @@ get_header();
 				<?php 
 				if ( have_posts() ) : ?>
 
-					<div id="post-wrapper" class="post-wrapper post-wrapper-archive">
+					<div id="post-wrapper" class="posts-list">
 						<?php while ( have_posts() ) : the_post();
 							
 							/* Include the Post-Format-specific template for the content.

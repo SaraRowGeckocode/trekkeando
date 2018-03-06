@@ -19,13 +19,10 @@ while ( have_posts() ) : the_post();
 		the_content();
 
 	}
-	else { ?>
+	else {
 
-		<div class="container">
-			<?php get_template_part( 'template-parts/content', 'page' ); ?>
-		</div><!-- .container -->
+		get_template_part( 'template-parts/content', 'page' );
 
-		<?php 
 	}
 
 endwhile;

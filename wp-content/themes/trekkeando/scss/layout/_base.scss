@@ -22,6 +22,8 @@ body {
 	background-position:center;
 	background-size:cover;
 	position:relative;
+	padding-top:40px;
+	padding-bottom:40px;
 
 	>.background-overlay,
 	>.elementor-background-overlay {
@@ -36,13 +38,19 @@ body {
 	
 	.elementor-container,
 	.container {
-		min-height:30vh;
+		min-height:28vh;
 		display:flex;
 		flex-direction:column;
 		justify-content:center;
+		position: relative;
 	}
 	.elementor-heading-title,
 	.entry-title {
 		color:inherit;
+	}
+
+	@include media-breakpoint-up(sm){
+		padding-top:80px;
+		padding-bottom:80px;
 	}
 }

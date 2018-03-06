@@ -4,29 +4,34 @@
 
 /* Entry (Posts,Pages) Block */
 
-
-.hentry:last-of-type {
-	margin: 0;
+body.single-post {
+	.post-wrapper {padding:80px 40px 40px}
 }
 
-
-/* Entry Summary */
-.entry-summary,
-.entry-summary p {
-	font-size: 15px;
-	font-size: 0.9375rem;
-	line-height: 1.5;
-	margin: 0;
-	padding: 0;
-	word-wrap: break-word;
+.post {
+	.entry-title {
+		text-transform: none;
+	}
 }
 
-/* Entry Content */
-.entry-content {
-	margin: 0;
-	padding: 0;
-	word-wrap: break-word;
+.hentry {
+	.entry-title {
+		margin-bottom: 28px;
+	}
+	.entry-meta {
+		margin-bottom: 30px;
+		@include rem-units(font-size,14);
+	}
+	
+	/* Entry Content */
+	.entry-content {
+		@include rem-units(font-size,18);
+		line-height:1.5;
+	}
+
+	.entry-meta-footer {margin:60px 0 40px}
 }
+
 
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,

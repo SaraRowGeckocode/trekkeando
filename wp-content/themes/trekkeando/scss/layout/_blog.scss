@@ -2,10 +2,14 @@
 	LAYOUT -- BLOG
 **/
 
-body.blog {
+body.blog,
+body.single-post {
 	background-color:$color-light;
 }
 .blog-layout {
+	margin: 0;
+
+	.site-main {background: white;}
 	
 	@include media-breakpoint-up(md){
 		.site-main {
@@ -13,6 +17,89 @@ body.blog {
 		}
 		.sidebar-area {
 			@include make-col(3);
+			padding-left: 40px;
+		}
+	}
+}
+
+.posts-list .post {
+	box-shadow: 0 1px 0 rgba(0,0,0,.03);
+
+	.thumbnail {
+		padding-bottom: 0;
+		img {position:static;}
+	}
+	.entry-excerpt {
+		padding:15px 20px;
+	}
+	.entry-title {
+		text-transform: none;
+		margin-bottom: 18px;
+	}
+	.entry-meta {
+		margin-bottom: 15px;
+	}
+	.entry-summary,
+	.entry-summary p {
+		line-height: 1.5;
+		margin: 0;
+		padding: 0;
+	}
+
+
+	// quote
+	&.format-quote {
+		display: block;
+		text-align: center;
+		background-color:$color-gray;
+		color:white;
+		position:relative;
+
+		a {color:white}
+
+		.entry-excerpt {
+			padding:40px 7%;
+		}
+
+		blockquote {
+			font-size:1.8em;
+
+		}
+		
+		&:before {
+			@include icon-styles;
+			content: unicode($icom-feather);
+			position:absolute;
+			bottom: 0;
+			opacity: .1;
+			font-size: 12em;
+			right: 10%;
+		}
+
+		.entry-meta {
+			position:absolute;
+			bottom:15px;
+			a {color:white}
+		}
+	}
+
+	@include media-breakpoint-up(sm){
+		display: flex;
+		align-items:center;
+
+		&:nth-child(even){
+			flex-direction: row-reverse;
+		}
+
+		.post-thumbnail,
+		.entry-excerpt {
+			flex:1;
+			flex-basis: 50%;
+			margin: 0;
+		}
+
+		.entry-excerpt {
+			padding:25px 30px;
 		}
 	}
 }

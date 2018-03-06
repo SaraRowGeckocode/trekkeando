@@ -8,19 +8,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="entry-header-wrapper entry-header-wrapper-single">
+	<header class="entry-header entry-header-single">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		
 		<div class="entry-meta entry-meta-single entry-meta-header-before">
 			<?php
 			SR_posted_on();
-			SR_posted_by();
 			SR_post_edit_link();
 			?>
 		</div><!-- .entry-meta -->
+	</header>
 
-		<header class="entry-header entry-header-single">
-			<?php the_title( '<h1 class="entry-title entry-title-single">', '</h1>' ); ?>
-		</header><!-- .entry-header -->
-	</div><!-- .entry-header-wrapper -->
 
 	<div class="entry-content entry-content-single">
 		<?php the_content(); ?>

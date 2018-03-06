@@ -19,9 +19,11 @@ button,.btn {
 	height: 60px;
 	line-height:58px;
 
-	span {
+	span,
+	&:before {
 		font-size: 2em;
 		line-height: inherit;
+		display: block;
 	}
 }
 

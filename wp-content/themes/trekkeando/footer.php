@@ -15,7 +15,9 @@
 		hfe_render_footer();
 		
 	} else {
-		echo '<footer><p>&copy; '. date('Y') .' '. get_bloginfo('name') .'. '. __('All rights reserved.', 'row_themes') .'</p></footer>';
+		echo '<footer><p>&copy; '. date('Y') .' '. get_bloginfo('name') .'. '. __('All rights reserved.', 'row_themes') .'. '.
+			'Diseño y desarrollo por <a href="http://sararow.es" rel="nofollow" target="_blank">SaraRow</a>.'.
+			'</p></footer>';
 	} ?>
 
 

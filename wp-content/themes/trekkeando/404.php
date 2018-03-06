@@ -8,9 +8,7 @@
 get_header(); ?>
 
 	<div class="container">
-		<div class="error-404 text-center">
-			<h1><?php _e('[404] Page not found','row_themes') ?></h1>
-		</div>
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 	</div><!-- .container -->
 
 <?php get_footer(); ?>

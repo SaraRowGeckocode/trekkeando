@@ -15,7 +15,7 @@
 			&:after {
 				content:'';
 				position:absolute;
-				border-top:2px solid;
+				border-top:2px solid $color-primary;
 				left: 0;
 				bottom: 0;
 				width:0;
@@ -23,12 +23,9 @@
 			}
 		}
 
-		&.current a{
+		&.current-menu-item a{
 			opacity:1!important;
-			&:after {
-				right:0;
-				width:auto!important;
-			}
+			color:$color-primary;
 		}
 	}
 }

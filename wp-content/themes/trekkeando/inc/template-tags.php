@@ -34,9 +34,12 @@ if ( ! function_exists( 'SR_the_post_pagination' ) ) :
 function SR_the_post_pagination() {
 
 	// Previous/next post navigation @since 4.1.0.
+	// quote post_format excluded
 	the_post_navigation( array(
 		'next_text' => '<span class="meta-nav">' . esc_html__( 'Next', 'row_themes' ) . '</span> ' . '<span class="post-title">%title</span>',
 		'prev_text' => '<span class="meta-nav">' . esc_html__( 'Prev', 'row_themes' ) . '</span> ' . '<span class="post-title">%title</span>',
+		'taxonomy' => 'post_format',
+		'excluded_terms' => array(5)
 	) );
 
 }
@@ -56,7 +59,7 @@ function SR_posted_on( $before = '', $after = '' ) {
 	// Time String
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> <time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -67,17 +70,13 @@ function SR_posted_on( $before = '', $after = '' ) {
 	);
 
 	// Posted On
-	$posted_on = sprintf( '<span class="screen-reader-text">%1$s</span><a href="%2$s" rel="bookmark"> %3$s</a>',
+	$posted_on = sprintf( '<span class="screen-reader-text">%1$s</span> %2$s',
 		esc_html_x( 'Posted on', 'post date', 'row_themes' ),
-		esc_url( get_permalink() ),
 		$time_string
 	);
 
 	// Posted On HTML
-	$html = '<span class="posted-on">' . $posted_on . '</span>'; // // WPCS: XSS OK.
-
-	// Posted On HTML Before After
-	$html = $before . $html . $after; // WPCS: XSS OK.
+	$html = '<span class="posted-on">' . $before . $posted_on . $after . '</span>'; // // WPCS: XSS OK.
 
 	/**
 	 * Filters the Posted On HTML.
@@ -213,14 +212,14 @@ function SR_post_first_category( $before = '', $after = '' ) {
 	if ( $categories[0] ) {
 
 		// Post First Category HTML
-		$html = sprintf( '<span class="post-first-category"><a href="%1$s" title="%2$s">%3$s</a></span>',
+		$html = sprintf( '<a href="%1$s" title="%2$s">%3$s</a>',
 			esc_attr( esc_url( get_category_link( $categories[0]->term_id ) ) ),
 			esc_attr( $categories[0]->cat_name ),
 			esc_html( $categories[0]->cat_name )
 		);
 
 		// Post First Category HTML Before After
-		$html = $before . $html . $after; // WPCS: XSS OK.
+		$html = '<span class="post-first-category">' . $before . $html . $after .'</span>'; // WPCS: XSS OK.
 
 		/**
 		 * Filters the Post First Category HTML.
@@ -319,7 +318,7 @@ if ( ! function_exists( 'SR_post_thumbnail' ) ) :
  * @param string $size Size of the image.
  * @return void
 */
-function SR_post_thumbnail( $size = 'wisteria-featured' ) {
+function SR_post_thumbnail( $size = 'thumbnail' ) {
 
 	// Post Thumbnail HTML
 	$html = '';
@@ -327,10 +326,40 @@ function SR_post_thumbnail( $size = 'wisteria-featured' ) {
 	// Post Thumbnail Validation
 	if ( SR_has_post_thumbnail() ) {
 
+		// responsive images
+		if($size == 'portfolio'){
+			$thumb = get_the_post_thumbnail_url(null,'portfolio');
+			$thumb2x = get_the_post_thumbnail_url(null,'portfolio2x');
+			$srcset_attr = '';
+
+			if($thumb2x){
+				$srcset = array(
+					$thumb . ' 380w',
+					$thumb2x . ' 760w'
+				);
+				$sizes = array(
+					'(min-width: 1260px) 428px', 
+					'(min-width: 992px) 29vw',
+					'(min-width: 576px) 50vw',
+					'90vw'
+				);
+				$srcset_attr = 'sizes="'. implode (", ", $sizes) .'" '.
+					'srcset="'. implode (", ", $srcset) .'"';
+			}
+
+			$img = '<img '.
+				'src="'. $thumb .'" '.
+				'width="428" '.
+				'height="428" '.
+				$srcset_attr .'>';
+		} else {
+			$img = get_the_post_thumbnail( null, $size, array( 'class' => 'img-featured img-responsive' ) );
+		}
+
 		// Post Thumbnail HTML
-		$html = sprintf( '<div class="entry-image-wrapper entry-image-wrapper-archive"><figure class="post-thumbnail"><a href="%1$s">%2$s</a></figure></div>',
+		$html = sprintf( '<figure class="post-thumbnail"><a href="%1$s" class="thumbnail">%2$s</a></figure>',
 			esc_attr( esc_url( get_the_permalink() ) ),
-			get_the_post_thumbnail( null, $size, array( 'class' => 'img-featured img-responsive' ) )
+			$img
 		);
 
 	}

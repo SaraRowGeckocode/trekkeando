@@ -8,20 +8,17 @@
 get_header(); ?>
 
 	<div class="container">
-		<div class="row">
+		<div class="row blog-layout">
 
-			<section id="primary" class="content-area ">
-				<main id="main" class="site-main" role="main">
-
-					<div id="post-wrapper" class="post-wrapper post-wrapper-single post-wrapper-post">
+			<main id="main" class="site-main" role="main">
+				<div id="post-wrapper" class="post-wrapper post-wrapper-single post-wrapper-post">
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-						<?php get_template_part( 'template-parts/author', 'bio' ); ?>
-
 						<?php SR_the_post_pagination(); ?>
+
 
 						<?php
 							// If comments are open or we have at least one comment, load up the comment template
@@ -31,10 +28,9 @@ get_header(); ?>
 						?>
 
 					<?php endwhile; // end of the loop. ?>
-					</div><!-- .post-wrapper -->
+				</div><!-- .post-wrapper -->
 
-				</main><!-- #main -->
-			</section><!-- #primary -->
+			</main><!-- #main -->
 
 			<?php get_sidebar(); ?>
 

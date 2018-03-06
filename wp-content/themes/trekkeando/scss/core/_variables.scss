@@ -3,7 +3,7 @@
 //
 $fonts-path: "fonts" !default;
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,600,800,900');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,600,800,900');
 @font-face {
 	font-family: 'trekkeando-icons';
 	src:
@@ -92,6 +92,7 @@ $icom-droplet: \e92e;
 $icom-edit: \e908;
 $icom-eye: \e92f;
 $icom-facebook: \e909;
+$icom-feather: \e947;
 $icom-flag: \e930;
 $icom-hash: \e90a;
 $icom-heart: \e90b;

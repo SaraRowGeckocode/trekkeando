@@ -4,8 +4,7 @@
 
 .entry-meta {
 	color: $color-text-light;
-	@include rem-units(font-size,12);
-	text-transform: uppercase;
+	@include rem-units(font-size,13);
 	
 	> span {
 		display: inline-block;
@@ -15,20 +14,24 @@
 	
 	.posted-on:before,
 	.post-edit-link-meta a:before,
-	.post-first-category:before {
+	.categories:before {
 		@include icon-styles;
 		color: $color-primary;
 	}
 
 	.post-edit-link-meta a:before {
-		content: $icom-edit;
+		content: unicode($icom-edit);
 	}
 	.posted-on:before {
-		content: $icom-clock;
+		content: unicode($icom-clock);
 	}
-	.post-first-category:before {
-		content: $icom-tag;
+	.categories:before {
+		content: unicode($icom-tag);
 	}
+}
+
+.updated:not(.published) {
+    display: none;
 }
 
 
