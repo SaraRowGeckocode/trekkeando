@@ -5,7 +5,7 @@
  * @package Trekkeando
  */
 
-if ( ! function_exists( 'SR_setup' ) ) :
+if ( ! function_exists( 'RT_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -13,7 +13,7 @@ if ( ! function_exists( 'SR_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function SR_setup() {
+function RT_setup() {
 
 	/*
 	 * Make theme available for translation.
@@ -87,8 +87,8 @@ function SR_setup() {
 	add_theme_support( 'header-footer-elementor' );
 
 }
-endif; // SR_setup
-add_action( 'after_setup_theme', 'SR_setup' );
+endif; // RT_setup
+add_action( 'after_setup_theme', 'RT_setup' );
 
 
 
@@ -97,7 +97,7 @@ add_action( 'after_setup_theme', 'SR_setup' );
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function SR_widgets_init() {
+function RT_widgets_init() {
 
 	// Widget Areas
 	register_sidebar( array(
@@ -110,12 +110,12 @@ function SR_widgets_init() {
 	) );
 
 }
-add_action( 'widgets_init', 'SR_widgets_init' );
+add_action( 'widgets_init', 'RT_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function SR_scripts() {
+function RT_scripts() {
 
 	// Theme Stylesheet
 	wp_enqueue_style( 'trekkeando', get_stylesheet_uri() );
@@ -140,7 +140,7 @@ function SR_scripts() {
 	wp_enqueue_script( 'trekkeando', get_template_directory_uri() . '/js/custom.min.js', array( 'jquery' ), '1.0', true );
 
 }
-add_action( 'wp_enqueue_scripts', 'SR_scripts' );
+add_action( 'wp_enqueue_scripts', 'RT_scripts' );
 
 
 /*

@@ -36,7 +36,7 @@ get_header();
 						endwhile; ?>
 					</div><!-- .post-wrapper -->
 
-					<?php SR_the_posts_pagination(); 
+					<?php RT_the_posts_pagination(); 
 
 				else :
 

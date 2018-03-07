@@ -14,7 +14,7 @@ get_header();
 
 while ( have_posts() ) : the_post(); 
 
-	if ( SR_has_Elementor_layout( $post->ID ) ) {
+	if ( RT_has_Elementor_layout( $post->ID ) ) {
 		
 		the_content();
 

@@ -4,7 +4,7 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to SR_comment() which is
+ * handled by a callback to RT_comment() which is
  * located in the inc/template-tags.php file.
  *
  * @package Trekkeando

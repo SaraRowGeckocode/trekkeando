@@ -17,7 +17,7 @@ get_header(); ?>
 
 						<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-						<?php SR_the_post_pagination(); ?>
+						<?php RT_the_post_pagination(); ?>
 
 
 						<?php

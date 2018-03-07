@@ -7,13 +7,13 @@
  * @package Trekkeando
  */
 
-if ( ! function_exists( 'SR_the_posts_pagination' ) ) :
+if ( ! function_exists( 'RT_the_posts_pagination' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @return void
  */
-function SR_the_posts_pagination() {
+function RT_the_posts_pagination() {
 
 	// Previous/next posts navigation @since 4.1.0
 	the_posts_pagination( array(
@@ -25,13 +25,13 @@ function SR_the_posts_pagination() {
 }
 endif;
 
-if ( ! function_exists( 'SR_the_post_pagination' ) ) :
+if ( ! function_exists( 'RT_the_post_pagination' ) ) :
 /**
  * Previous/next post navigation.
  *
  * @return void
  */
-function SR_the_post_pagination() {
+function RT_the_post_pagination() {
 
 	// Previous/next post navigation @since 4.1.0.
 	// quote post_format excluded
@@ -45,14 +45,14 @@ function SR_the_post_pagination() {
 }
 endif;
 
-if ( ! function_exists( 'SR_posted_on' ) ) :
+if ( ! function_exists( 'RT_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function SR_posted_on( $before = '', $after = '' ) {
+function RT_posted_on( $before = '', $after = '' ) {
 
 	// No need to display date for sticky posts
-	if ( SR_has_sticky_post() ) {
+	if ( RT_has_sticky_post() ) {
 		return;
 	}
 
@@ -83,17 +83,17 @@ function SR_posted_on( $before = '', $after = '' ) {
 	 *
 	 * @param string $html Posted On HTML.
 	 */
-	$html = apply_filters( 'SR_posted_on_html', $html, $before, $after );
+	$html = apply_filters( 'RT_posted_on_html', $html, $before, $after );
 
 	echo $html; // WPCS: XSS OK.
 }
 endif;
 
-if ( ! function_exists( 'SR_posted_by' ) ) :
+if ( ! function_exists( 'RT_posted_by' ) ) :
 /**
  * Prints author.
  */
-function SR_posted_by( $before = '', $after = '' ) {
+function RT_posted_by( $before = '', $after = '' ) {
 
 	// Global Post
 	global $post;
@@ -124,20 +124,20 @@ function SR_posted_by( $before = '', $after = '' ) {
 	 *
 	 * @param string $html Posted By HTML.
 	 */
-	$html = apply_filters( 'SR_posted_by_html', $html, $before, $after );
+	$html = apply_filters( 'RT_posted_by_html', $html, $before, $after );
 
 	echo $html; // WPCS: XSS OK.
 }
 endif;
 
-if ( ! function_exists( 'SR_sticky_post' ) ) :
+if ( ! function_exists( 'RT_sticky_post' ) ) :
 /**
  * Prints HTML label for the sticky post.
  */
-function SR_sticky_post( $before = '', $after = '' ) {
+function RT_sticky_post( $before = '', $after = '' ) {
 
 	// Sticky Post Validation
-	if ( ! SR_has_sticky_post() ) {
+	if ( ! RT_has_sticky_post() ) {
 		return;
 	}
 
@@ -154,23 +154,23 @@ function SR_sticky_post( $before = '', $after = '' ) {
 	 *
 	 * @param string $html Sticky Post HTML.
 	 */
-	$html = apply_filters( 'SR_sticky_post_html', $html, $before, $after );
+	$html = apply_filters( 'RT_sticky_post_html', $html, $before, $after );
 
 	echo $html; // WPCS: XSS OK.
 }
 endif;
 
 
-if ( ! function_exists( 'SR_post_edit_link' ) ) :
+if ( ! function_exists( 'RT_post_edit_link' ) ) :
 /**
  * Prints post edit link.
  *
  * @return void
 */
-function SR_post_edit_link( $before = '', $after = '' ) {
+function RT_post_edit_link( $before = '', $after = '' ) {
 
 	// Post edit link Validation
-	if ( SR_has_post_edit_link() ) {
+	if ( RT_has_post_edit_link() ) {
 
 		// Post Edit Link
 		$post_edit_link = sprintf( '<span class="screen-reader-text">%1$s</span><a class="post-edit-link" href="%2$s">%3$s</a>',
@@ -190,7 +190,7 @@ function SR_post_edit_link( $before = '', $after = '' ) {
 		 *
 		 * @param string $html Post Edit Link HTML.
 		 */
-		$html = apply_filters( 'SR_post_edit_link_html', $html, $before, $after );
+		$html = apply_filters( 'RT_post_edit_link_html', $html, $before, $after );
 
 		echo $html; // WPCS: XSS OK.
 	}
@@ -199,13 +199,13 @@ function SR_post_edit_link( $before = '', $after = '' ) {
 endif;
 
 
-if ( ! function_exists( 'SR_post_first_category' ) ) :
+if ( ! function_exists( 'RT_post_first_category' ) ) :
 /**
  * Prints first category for the current post.
  *
  * @return void
 */
-function SR_post_first_category( $before = '', $after = '' ) {
+function RT_post_first_category( $before = '', $after = '' ) {
 
 	// An array of categories to return for the post.
 	$categories = get_the_category();
@@ -227,7 +227,7 @@ function SR_post_first_category( $before = '', $after = '' ) {
 		 * @param string $html Post First Category HTML.
 		 * @param array $categories An array of categories to return for the post.
 		 */
-		$html = apply_filters( 'SR_post_first_category_html', $html, $before, $after, $categories );
+		$html = apply_filters( 'RT_post_first_category_html', $html, $before, $after, $categories );
 
 		echo $html; // WPCS: XSS OK.
 	}
@@ -236,28 +236,28 @@ function SR_post_first_category( $before = '', $after = '' ) {
 endif;
 
 
-if ( ! function_exists( 'SR_entry_footer' ) ) :
+if ( ! function_exists( 'RT_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function SR_entry_footer() {
+function RT_entry_footer() {
 
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( _x(', ', 'Used between category, there is a space after the comma.', 'row_themes' ) );
-		if ( $categories_list && SR_categorized_blog() ) {
+		$categories_list = get_the_category_list( ', ' );
+		if ( $categories_list && RT_categorized_blog() ) {
 			printf( '<span class="cat-links cat-links-single">' . esc_html__( 'Posted in %1$s', 'row_themes' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', _x(', ', 'Used between tag, there is a space after the comma.', 'row_themes' ) );
+		$tags_list = get_the_tag_list( '', ', ' );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links tags-links-single">' . esc_html__( 'Tagged %1$s', 'row_themes' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
-	edit_post_link( sprintf( esc_html__( 'Edit %1$s', 'row_themes' ), '<span class="screen-reader-text">' . the_title_attribute( 'echo=0' ) . '</span>' ), '<span class="edit-link">', '</span>' );
+	RT_post_edit_link();
 
 }
 endif;
@@ -267,8 +267,8 @@ endif;
  *
  * @return bool
  */
-function SR_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'SR_categories' ) ) ) {
+function RT_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'RT_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array (
 			'fields'     => 'ids',
@@ -281,34 +281,34 @@ function SR_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'SR_categories', $all_the_cool_cats );
+		set_transient( 'RT_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so SR_categorized_blog should return true.
+		// This blog has more than 1 category so RT_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so SR_categorized_blog should return false.
+		// This blog has only 1 category so RT_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in SR_categorized_blog.
+ * Flush out the transients used in RT_categorized_blog.
  */
-function SR_category_transient_flusher() {
+function RT_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'SR_categories' );
+	delete_transient( 'RT_categories' );
 }
-add_action( 'edit_category', 'SR_category_transient_flusher' );
-add_action( 'save_post',     'SR_category_transient_flusher' );
+add_action( 'edit_category', 'RT_category_transient_flusher' );
+add_action( 'save_post',     'RT_category_transient_flusher' );
 
 
 
-if ( ! function_exists( 'SR_post_thumbnail' ) ) :
+if ( ! function_exists( 'RT_post_thumbnail' ) ) :
 /**
  * Display an optional post thumbnail.
  *
@@ -318,13 +318,13 @@ if ( ! function_exists( 'SR_post_thumbnail' ) ) :
  * @param string $size Size of the image.
  * @return void
 */
-function SR_post_thumbnail( $size = 'thumbnail' ) {
+function RT_post_thumbnail( $size = 'thumbnail' ) {
 
 	// Post Thumbnail HTML
 	$html = '';
 
 	// Post Thumbnail Validation
-	if ( SR_has_post_thumbnail() ) {
+	if ( RT_has_post_thumbnail() ) {
 
 		// responsive images
 		if($size == 'portfolio'){
@@ -369,7 +369,7 @@ function SR_post_thumbnail( $size = 'thumbnail' ) {
 	 *
 	 * @param string $html Post Thumbnail HTML.
 	 */
-	$html = apply_filters( 'SR_post_thumbnail_html', $html );
+	$html = apply_filters( 'RT_post_thumbnail_html', $html );
 
 	// Print HTML
 	if ( ! empty ( $html ) ) {
@@ -385,13 +385,13 @@ endif;
  *
  * @return bool
  */
-function SR_has_post_thumbnail() {
+function RT_has_post_thumbnail() {
 
 	/**
 	 * Post Thumbnail Filter
 	 * @return bool
 	 */
-	return apply_filters( 'SR_has_post_thumbnail', (bool) ( ! post_password_required() && has_post_thumbnail() ) );
+	return apply_filters( 'RT_has_post_thumbnail', (bool) ( ! post_password_required() && has_post_thumbnail() ) );
 
 }
 
@@ -401,13 +401,13 @@ function SR_has_post_thumbnail() {
  *
  * @return bool
  */
-function SR_has_sticky_post() {
+function RT_has_sticky_post() {
 
 	/**
 	 * Sticky Post Filter
 	 * @return bool
 	 */
-	return apply_filters( 'SR_has_sticky_post', (bool) ( is_sticky() && is_home() && ! is_paged() ) );
+	return apply_filters( 'RT_has_sticky_post', (bool) ( is_sticky() && is_home() && ! is_paged() ) );
 
 }
 
@@ -417,14 +417,14 @@ function SR_has_sticky_post() {
  *
  * @return bool
  */
-function SR_has_post_edit_link() {
+function RT_has_post_edit_link() {
 
 	/**
 	 * Post Edit Link Filter
 	 * @return bool
 	 */
 	$post_edit_link = get_edit_post_link();
-	return apply_filters( 'SR_has_post_edit_link', (bool) ( ! empty( $post_edit_link ) ) );
+	return apply_filters( 'RT_has_post_edit_link', (bool) ( ! empty( $post_edit_link ) ) );
 
 }
 
@@ -434,7 +434,7 @@ function SR_has_post_edit_link() {
  *
  * @return bool
  */
-function SR_has_excerpt() {
+function RT_has_excerpt() {
 
 	// Post Excerpt
 	$post_excerpt = get_the_excerpt();
@@ -443,7 +443,7 @@ function SR_has_excerpt() {
 	 * Excerpt Filter
 	 * @return bool
 	 */
-	return apply_filters( 'SR_has_excerpt', (bool) ! empty ( $post_excerpt ) );
+	return apply_filters( 'RT_has_excerpt', (bool) ! empty ( $post_excerpt ) );
 
 }
 
@@ -453,13 +453,13 @@ function SR_has_excerpt() {
  *
  * @return bool
  */
-function SR_has_sidebar() {
+function RT_has_sidebar() {
 
 	/**
 	 * Sidebar Filter
 	 * @return bool
 	 */
-	return apply_filters( 'SR_has_sidebar', (bool) is_active_sidebar( 'sidebar-1' ) );
+	return apply_filters( 'RT_has_sidebar', (bool) is_active_sidebar( 'sidebar-1' ) );
 
 }
 
@@ -468,7 +468,7 @@ function SR_has_sidebar() {
  *
  * @return bool
  */
-function SR_has_Elementor_layout($id) {
+function RT_has_Elementor_layout($id) {
 	// by metabox
 	//return get_post_meta( $id, '_elementor_edit_mode', true );
 

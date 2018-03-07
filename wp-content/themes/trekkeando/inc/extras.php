@@ -14,10 +14,10 @@
  *
  * @return string
  */
-function SR_get_custom_logo( $html ) {
+function RT_get_custom_logo( $html ) {
 	return sprintf( '<div class="site-logo-wrapper">%1$s</div>', $html );
 }
-add_filter( 'get_custom_logo', 'SR_get_custom_logo' );
+add_filter( 'get_custom_logo', 'RT_get_custom_logo' );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -25,20 +25,20 @@ add_filter( 'get_custom_logo', 'SR_get_custom_logo' );
  * @param array $args Configuration arguments.
  * @return array
  */
-function SR_page_menu_args( $args ) {
+function RT_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	$args['menu_class'] = 'site-header-menu';
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'SR_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'RT_page_menu_args' );
 
 /**
  * Add ID and CLASS attributes to the first <ul> occurence in wp_page_menu
  */
-function SR_page_menu_class( $class ) {
+function RT_page_menu_class( $class ) {
   return preg_replace( '/<ul>/', '<ul class="header-menu sf-menu">', $class, 1 );
 }
-add_filter( 'wp_page_menu', 'SR_page_menu_class' );
+add_filter( 'wp_page_menu', 'RT_page_menu_class' );
 
 /**
  * Filter 'excerpt_length'
@@ -46,7 +46,7 @@ add_filter( 'wp_page_menu', 'SR_page_menu_class' );
  * @param int $length
  * @return int
  */
-function SR_excerpt_length( $length ) {
+function RT_excerpt_length( $length ) {
     if ( is_admin() ) {
 		return $length;
 	}
@@ -59,9 +59,9 @@ function SR_excerpt_length( $length ) {
 	 *
 	 * @param int $length Excerpt Length.
 	 */
-	return apply_filters( 'SR_excerpt_length', $length );
+	return apply_filters( 'RT_excerpt_length', $length );
 }
-add_filter( 'excerpt_length', 'SR_excerpt_length' );
+add_filter( 'excerpt_length', 'RT_excerpt_length' );
 
 /**
  * Filter 'excerpt_more'
@@ -70,7 +70,7 @@ add_filter( 'excerpt_length', 'SR_excerpt_length' );
  * @param str $more
  * @return str
  */
-function SR_excerpt_more( $more ) {
+function RT_excerpt_more( $more ) {
 	if ( is_admin() ) {
 		return $more;
 	}
@@ -83,9 +83,9 @@ function SR_excerpt_more( $more ) {
 	 *
 	 * @param string $excerpt_more Excerpt More.
 	 */
-	return apply_filters( 'SR_excerpt_more', $more );
+	return apply_filters( 'RT_excerpt_more', $more );
 }
-add_filter( 'excerpt_more', 'SR_excerpt_more' );
+add_filter( 'excerpt_more', 'RT_excerpt_more' );
 
 /**
  * Filter 'the_content_more_link'
@@ -94,11 +94,11 @@ add_filter( 'excerpt_more', 'SR_excerpt_more' );
  * @param string $link
  * @return filtered link
  */
-function SR_the_content_more_link_scroll( $link ) {
+function RT_the_content_more_link_scroll( $link ) {
 	$link = preg_replace( '|#more-[0-9]+|', '', $link );
 	return $link;
 }
-add_filter( 'the_content_more_link', 'SR_the_content_more_link_scroll' );
+add_filter( 'the_content_more_link', 'RT_the_content_more_link_scroll' );
 
 /**
  * Filter `body_class`
@@ -107,19 +107,19 @@ add_filter( 'the_content_more_link', 'SR_the_content_more_link_scroll' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-/*function SR_body_classes( $classes ) {
+/*function RT_body_classes( $classes ) {
 
 	
 
 	return $classes;
 }
-add_filter( 'body_class', 'SR_body_classes' );*/
+add_filter( 'body_class', 'RT_body_classes' );*/
 
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  */
-function SR_attachment_link( $url, $id ) {
+function RT_attachment_link( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) ) {
 		return $url;
 	}
@@ -131,15 +131,15 @@ function SR_attachment_link( $url, $id ) {
 
 	return $url;
 }
-add_filter( 'attachment_link', 'SR_attachment_link', 10, 2 );
+add_filter( 'attachment_link', 'RT_attachment_link', 10, 2 );
 
-if ( ! function_exists( 'SR_the_attached_image' ) ) :
+if ( ! function_exists( 'RT_the_attached_image' ) ) :
 /**
  * Print the attached image with a link to the next attached image.
  *
  * @return void
  */
-function SR_the_attached_image() {
+function RT_the_attached_image() {
 	$post                = get_post();
 	/**
 	 * Filter the default Wisteria attachment size.
@@ -151,7 +151,7 @@ function SR_the_attached_image() {
 	 *     @type int $width  Width of the image in pixels. Default 1140.
 	 * }
 	 */
-	$attachment_size     = apply_filters( 'SR_attachment_size', 'full' );
+	$attachment_size     = apply_filters( 'RT_attachment_size', 'full' );
 	$next_attachment_url = wp_get_attachment_url();
 
 	if ( $post->post_parent ) { // Only look for attachments if this attachment has a parent object.
@@ -212,7 +212,7 @@ endif;
  * @param string $css.
  * @return minified css
  */
-function SR_minify_css( $css ) {
+function RT_minify_css( $css ) {
 
     // Remove CSS comments
     $css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );

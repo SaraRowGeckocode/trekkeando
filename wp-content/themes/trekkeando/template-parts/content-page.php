@@ -18,9 +18,9 @@
 			
 		</div><!-- .entry-content -->
 
-		<?php if ( SR_has_post_edit_link() ) : ?>
+		<?php if ( RT_has_post_edit_link() ) : ?>
 		<footer class="entry-meta entry-meta-single entry-meta-footer">
-			<?php SR_entry_footer(); ?>
+			<?php RT_entry_footer(); ?>
 		</footer><!-- .entry-meta -->
 		<?php endif; ?>
 		

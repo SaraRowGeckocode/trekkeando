@@ -5,7 +5,7 @@
  * @package Trekkeando
  */
 
-if ( ! SR_has_sidebar() ) {
+if ( ! RT_has_sidebar() ) {
 	return;
 }
 ?>

@@ -52,14 +52,14 @@
 	} );
 
 	// Copyright Control
-	wp.customize( 'SR_copyright', function( value ) {
+	wp.customize( 'RT_copyright', function( value ) {
 		value.bind( function( to ) {
 			$( '.credits-blog' ).html( to );
 		} );
 	} );
 
 	// Credit Control
-	wp.customize( 'SR_credit', function( value ) {
+	wp.customize( 'RT_credit', function( value ) {
 		value.bind( function( to ) {
 			if ( true === to ) {
 				$( '.credits-designer' ).css( {

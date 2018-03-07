@@ -13,7 +13,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="credits">
-						<?php do_action( 'SR_credits' ); ?>
+						<?php do_action( 'RT_credits' ); ?>
 					</div><!-- .credits -->
 				</div><!-- .col -->
 			</div><!-- .row -->

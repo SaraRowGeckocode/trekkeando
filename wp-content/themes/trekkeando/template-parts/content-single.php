@@ -11,10 +11,10 @@
 	<header class="entry-header entry-header-single">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		
-		<div class="entry-meta entry-meta-single entry-meta-header-before">
+		<div class="entry-meta">
 			<?php
-			SR_posted_on();
-			SR_post_edit_link();
+			RT_posted_on();
+			RT_post_edit_link();
 			?>
 		</div><!-- .entry-meta -->
 	</header>
@@ -32,8 +32,8 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-meta entry-meta-single entry-meta-footer">
-		<?php SR_entry_footer(); ?>
+	<footer class="entry-meta entry-meta-footer">
+		<?php RT_entry_footer(); ?>
 	</footer><!-- .entry-meta -->
 
 </article><!-- #post-## -->

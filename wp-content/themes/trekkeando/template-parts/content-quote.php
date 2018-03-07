@@ -14,7 +14,7 @@
 		<?php if ( 'post' === get_post_type() ) : // For Posts ?>
 			<div class="entry-meta">
 				<?php
-				SR_post_edit_link(); ?>
+				RT_post_edit_link(); ?>
 			</div>
 		<?php endif; ?>
 
