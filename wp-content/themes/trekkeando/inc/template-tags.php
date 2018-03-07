@@ -236,6 +236,25 @@ function RT_post_first_category( $before = '', $after = '' ) {
 endif;
 
 
+if ( ! function_exists( 'RT_entry_meta' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function RT_entry_meta() { ?>
+
+	<div class="entry-meta">
+		<?php if ( 'post' === get_post_type() ) : // For Posts ?>
+			<?php RT_posted_on(); ?>
+			<span class="categories"><?php the_category(', ') ?></span>
+		<?php endif; ?>
+		
+		<?php RT_post_edit_link();  ?>
+	</div>
+
+<?php }
+endif;
+
+
 if ( ! function_exists( 'RT_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -244,16 +263,10 @@ function RT_entry_footer() {
 
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( ', ' );
-		if ( $categories_list && RT_categorized_blog() ) {
-			printf( '<span class="cat-links cat-links-single">' . esc_html__( 'Posted in %1$s', 'row_themes' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
 
-		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', ', ' );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links tags-links-single">' . esc_html__( 'Tagged %1$s', 'row_themes' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			echo '<p class="tags-links">' . __( 'Tags:', 'row_themes' ) . $tags_list .'</p>';
 		}
 	}
 

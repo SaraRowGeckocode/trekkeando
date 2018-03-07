@@ -14,9 +14,11 @@
 	
 	.posted-on:before,
 	.post-edit-link-meta a:before,
-	.categories:before {
+	.categories:before,
+	.tags-links:before {
 		@include icon-styles;
 		color: $color-primary;
+		margin-right: 5px;
 	}
 
 	.post-edit-link-meta a:before {
@@ -26,6 +28,9 @@
 		content: unicode($icom-clock);
 	}
 	.categories:before {
+		content: unicode($icom-navigation);
+	}
+	.tags-links:before {
 		content: unicode($icom-tag);
 	}
 }

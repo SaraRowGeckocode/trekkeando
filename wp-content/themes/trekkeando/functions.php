@@ -67,7 +67,7 @@ function RT_setup() {
 	) );
 
 	// This theme styles the visual editor to resemble the theme style.
-	add_editor_style( array ( 'css/editor-style.css' ) );
+	add_editor_style( array ( 'editor-style.css' ) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments

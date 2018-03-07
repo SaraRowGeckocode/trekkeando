@@ -13,19 +13,21 @@
 }
 
 @mixin ul-style {
-	padding-left: 15px;
+	padding:0;
 	list-style:none;
 
-	> li {position: relative;
+	> li {
+		position: relative;
+		padding-left: 24px;
+		margin-bottom: 10px;
+
 		&:before {
-			content:'';
-			width: 0.37em;
-			height: 0.37em;
-			background-color:$color-primary;
-			border-radius:50%;
+			@include icon-styles;
+			content: unicode($icom-chevron-right);
+			color:$color-primary;
 			position:absolute;
-			left:-15px;
-			top:0.47em;
+			left:0;
+			line-height: inherit;
 		}
 	}
 }

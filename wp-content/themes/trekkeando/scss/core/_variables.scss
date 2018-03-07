@@ -39,6 +39,7 @@ $color-link: $color-primary !default;
 $color-link-hover: darken($color-link,30%) !default;
 
 $border-style: solid 1px $color-light !default;
+$vertical-elements-spacing: 1.5rem !default;
 
 // Responsive Breakpoints
 $grid-breakpoints: (

@@ -1,0 +1,38 @@
+/*!
+ * Theme Name: Trekkeando
+ * Description: Used to style the TinyMCE editor.
+ */
+
+//
+// Core files
+//
+@import "core/functions";
+@import "core/variables";
+@import "core/mixins";
+@import "core/mixins--breakpoints";
+@import "core/mixins--grid";
+
+/**
+/*  Base elements
+/*/
+@import "base/reboot";
+@import "base/typography";
+
+
+/**
+  Elements
+**/
+@import "element/icons";
+@import "element/buttons";
+
+
+.mceContentBody {
+	color: $color-text;
+	font-family: $font-base;
+	font-size: 18px;
+	line-height: 1.5;
+	max-width: 730px;
+	margin:20px 25px;
+}
+
+@import "base/editor-style";
