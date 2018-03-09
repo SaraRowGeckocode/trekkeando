@@ -9,6 +9,7 @@
  *
  * @package Trekkeando
  */
+use Elementor\Base_Data_Control;
 
 get_header();
 

@@ -4,6 +4,7 @@ namespace RowElementorWidgets;
 
 use RowElementorWidgets\Widgets\Row_Widgets_Subpages_Grid;
 use RowElementorWidgets\Widgets\Row_Widgets_Related_Content;
+use RowElementorWidgets\Widgets\Row_Widgets_Social_Icons;
 
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -118,6 +119,7 @@ class Plugin {
 	private function includes() {
         require_once __DIR__ . '/widgets/subpages-grid.php';
         require_once __DIR__ . '/widgets/related-content.php';
+        require_once __DIR__ . '/widgets/social-icons.php';
 	}
 
 	/**
@@ -132,12 +134,14 @@ class Plugin {
 
 		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Subpages_Grid() );
 		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Related_Content() );
+		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Social_Icons() );
 
 		$remove_widgets = array(
 			//'counter',
 			//'progress',
 			'audio',
 			//'accordion',
+			'social-icons', // it breaks when custom icons added
 			'wp-widget-pages',
 			'wp-widget-archives',
 			'wp-widget-media_audio',
