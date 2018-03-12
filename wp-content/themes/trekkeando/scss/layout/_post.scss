@@ -5,7 +5,11 @@
 /* Entry (Posts,Pages) Block */
 
 body.single-post {
-	.post-wrapper {padding:80px 40px 40px}
+	.post-wrapper {padding:80px 40px 0}
+	#comments {
+		padding:40px;
+		margin:0 -40px;
+	}
 }
 
 .post {

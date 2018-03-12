@@ -1,0 +1,10 @@
+/**
+  BASE -- SIDEBAR
+**/
+
+.sidebar-area{
+	@include media-breakpoint-down(sm) {
+		.widget {display: none;}
+		.widget_search {display: block;}
+	}
+}

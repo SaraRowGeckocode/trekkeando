@@ -30,8 +30,12 @@
 	.categories:before {
 		content: unicode($icom-navigation);
 	}
-	.tags-links:before {
-		content: unicode($icom-tag);
+	.tags-links {
+		&:before {content: unicode($icom-tag);}
+		a {
+			color:$color-primary;
+			margin-left: 6px;
+		}
 	}
 }
 

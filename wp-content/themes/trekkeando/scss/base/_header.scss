@@ -12,6 +12,11 @@ header[role="banner"] {
 
 	a {color:inherit}
 
+	.site-logo-wrapper {
+		max-width:120px;
+		margin:0 auto;
+	}
+
 
 	@include media-breakpoint-up($uncollapsed-menu){
 		background-color:$navbar-bg;
@@ -27,6 +32,7 @@ header[role="banner"] {
 			top:-4px;
 			left: 50%;
 			margin-left:-132px;
+			max-width:none;
 
 			img {margin:0 auto; display: block;}
 		}

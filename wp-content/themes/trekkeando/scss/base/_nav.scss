@@ -51,69 +51,98 @@
 @include media-breakpoint-up($uncollapsed-menu){
 	.header-menu {
 		display: inline-block;
+		text-transform: uppercase;
 
 		> li {
 			display: inline-block;
 			padding:0 12px;
+			position: relative;
 
 			> a {
 				display: block;
 				line-height: 45px;
-				line-height: 45px;
-				text-transform: uppercase;
 				min-width:130px;
 
+				&:after {left:0;}
+			}
+			&:hover > a:after {width:100%;}
+		}
+		.logo-spacer {
+			width:246px;
+			a {display: none;}
+		}
+
+		ul {
+			@include ul-reset;
+			position:absolute;
+			right:12px;
+			text-align: right;
+			padding:2px 0;
+			font-weight:$font-weight-medium;
+			font-size:.88em;
+			visibility: hidden;
+    		opacity: 0;
+    		transform:translate3d(0, 20px, 0);
+    		transition:opacity .3s ease-out, transform .5s ease-out;
+
+			a {
+				color:white;
+				display: inline-block;
+				padding: 7px 9px 4px 25px;
+				white-space: nowrap;
+				position: relative;
+				
+				&:before,
 				&:after {
-					left:0;
+					content: '';
+					right: 0;
+					height: 100%;
+					position: absolute;
+					background: white;
+					top: 0;
+					z-index: -1;
 				}
-				&:hover{
+				&:before {
+					background:$color-secondary;
+					width:100%
+				}
+				&:after {
+					background:$color-light;
+					width:0%;
+					transition:width .2s ease-out;
+					transform:skewX(-23deg);
+					transform-origin:right top;
+				}
+
+				&:hover {
+					color:$color-secondary;
 					&:after {
 						width:100%;
 					}
 				}
 			}
 		}
-		.logo-spacer {width:246px;
-			a {display: none;}
+
+		>li:hover ul {
+			visibility: visible;
+    		opacity: 1;
+    		transform:translate3d(0, 0, 0);
 		}
 	}
 	.toggle-menu {display: none!important;}
 }
 
 @include media-breakpoint-down($collapsed-menu){
-	/*
-	/* OFFCANVAS MENU
-	/*/
-	.push-menu-body {
-	    /* overflow-x: hidden;
-	    position: relative;
-	    left: 0;
-	    //right: 0;
-	    width: 100%;
-	    height: 100%;
-	    transition: all 0.3s ease; */
+	.header-menu {
+		position:fixed;
+		background:$color-secondary;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		color:white;
+		opacity:0;
+		visibility:hidden;
 
-	    &.push-right {
-		    overflow: hidden;
-		    // left: 100%;
-		    .offcanvas-menu.left {left:0!important}
-		}
-	}
-	.offcanvas-menu {
-	    position: fixed;
-	    width: 100%;
-	    top:52px;
-	    bottom:0;
-	    z-index: 222;
-	    max-width: 100%;
-	    transition: all 0.3s ease;
-	    overflow-y: auto;
-	    background-color:$color-secondary;
-	    color:white;
-	    text-align: left;
-	    padding:6vh 22px;
-	}
-	#main-menu nav {
-		@include rem-units(font-size,26)
 	}
 }
