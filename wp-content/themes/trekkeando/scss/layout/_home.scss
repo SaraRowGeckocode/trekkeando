@@ -3,5 +3,16 @@
 **/
 
 body.home {
-	 #content {padding-top: 0;}
+	#content {padding-top: 0;}
+
+
+	@include media-breakpoint-down(sm){
+		.elementor-section-height-full {
+			height:100vh;
+
+			>.elementor-container {
+				height:100%
+			}
+		}
+	}
 }

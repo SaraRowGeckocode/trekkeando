@@ -21,9 +21,9 @@
 		<?php
 		// Header Menu
 		wp_nav_menu( array(
-			'container'       => null,
 			'theme_location'  => 'header-menu',
-			'menu_class'      => 'navbar-nav header-menu'
+			'menu_class'      => 'navbar-nav',
+			'container_id'    => 'header-menu'
 		) );
 		?>
 
