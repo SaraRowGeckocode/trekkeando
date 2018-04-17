@@ -3,6 +3,8 @@
 	default content estyles
 **/
 
-.entry-content {
+.entry-content,
+.elementor-tab-content,
+.elementor-text-editor {
 	@import "base/editor-style";
 }

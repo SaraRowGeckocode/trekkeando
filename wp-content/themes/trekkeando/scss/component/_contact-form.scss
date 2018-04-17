@@ -4,6 +4,7 @@
 .form-card {
 	position:relative;
 	
+	> .elementor-column-wrap {padding: 20px 20px 50px!important;}
 	.elementor-widget-shortcode,
 	.elementor-widget-wrap {position:static}
 	.btn {
@@ -11,18 +12,15 @@
 		bottom:0;
 		right:0
 	}
-	
-	.form-group:last-child,
-	.message-group {margin-bottom: 0;}
 	textarea.form-control {
-		border:none;
-		height: 200px;
+		height: 100px;
+		resize:none;
 	}
 
 	.ajax-loader {display: none!important;}
 	
 	@include media-breakpoint-up(md){
-		.elementor-column-wrap {padding: 40px 50px 60px 50px!important;}
+		> .elementor-column-wrap {padding: 40px 50px 60px 50px!important;}
 		.row {
 			margin-left: -48px;
 			margin-right: -48px;
@@ -33,5 +31,15 @@
 
 			+ .col {border-left:1px solid $color-gray-light}
 		}
+		.form-group:last-child,
+		.message-group {margin-bottom: 0;}
+		textarea.form-control {
+			border:none;
+			height:200px;
+		}
+	}
+
+	@include media-breakpoint-down(sm){
+		.btn-icon {width:100%}
 	}
 }

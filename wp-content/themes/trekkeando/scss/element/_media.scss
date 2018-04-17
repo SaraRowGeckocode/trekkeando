@@ -65,13 +65,11 @@
 13.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
-  margin: 0 0 26px;
-  margin: 0 0 1.625rem;
+  margin: 0 -10px 26px;
 }
-
-.gallery .gallery-item {
+.gallery-item {
   display: inline-block;
-  padding: 1.79104477%;
+  padding: 10px;
   text-align: center;
   vertical-align: top;
   width: 100%;

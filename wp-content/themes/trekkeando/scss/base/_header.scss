@@ -46,8 +46,6 @@ header[role="banner"] {
 
 // fixed header content top offset
 #content {
-	padding-top: 50px;
-
 	@include media-breakpoint-up($uncollapsed-menu){
 		padding-top: 105px;
 	}

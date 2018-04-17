@@ -17,4 +17,15 @@
 			@include make-col(4)
 		}
 	}
+	@include media-breakpoint-down(xs){
+		.thumbnail {
+			padding-bottom: 63%;
+
+			.overlay {
+				width: 100%;
+				text-align: center;
+				bottom:20px;
+			}
+		}
+	}
 }

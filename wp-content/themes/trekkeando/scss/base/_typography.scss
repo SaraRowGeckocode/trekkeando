@@ -44,7 +44,7 @@ h1 {
 
 h2 {
 	@include rem-units(font-size,30);
-	margin-bottom: 30px;
+	margin-bottom: 1em;
 }
 
 h3 {
@@ -104,4 +104,10 @@ blockquote {
 	-webkit-clip-path: inset(50%);
 	clip-path: inset(50%);
 	border: 0;
+}
+
+@include media-breakpoint-down(sm){
+	h2 {
+		@include rem-units(font-size,24);
+	}
 }
