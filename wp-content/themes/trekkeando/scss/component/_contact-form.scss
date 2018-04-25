@@ -7,6 +7,9 @@
 	> .elementor-column-wrap {padding: 20px 20px 50px!important;}
 	.elementor-widget-shortcode,
 	.elementor-widget-wrap {position:static}
+	.elementor-widget-icon-box {
+		&:hover a {color:$color-primary}
+	}
 	.btn {
 		position:absolute;
 		bottom:0;
@@ -16,7 +19,23 @@
 		height: 100px;
 		resize:none;
 	}
-
+	.check-privacy {
+		position: absolute;
+	    right: 84px;
+	    bottom: 16px;
+	    font-size:.7em;
+	    text-align: right;
+		
+		.wpcf7-form-control-wrap {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	    label {
+	    	text-transform: none;
+	    	color:$color-gray;
+	    	font-size:1em;
+	    }
+	}
 	.ajax-loader {display: none!important;}
 	
 	@include media-breakpoint-up(md){

@@ -16,6 +16,22 @@ footer[role="contentinfo"],
 		}
 	}
 	
+	.elementor-widget-wp-widget-nav_menu {margin:0 0 5px}
+	.menu {
+		@include ul-inline;
+		text-align: right;
+		font-size:.85em;
+		line-height: 1;
+
+		> li {
+			margin:0 0 0 10px;
+			border-left: 1px solid rgba(white,.5);
+			padding: 0 0 0 12px;
+
+			&:first-child {border-left:none}
+		}
+	}
+	
 	@include media-breakpoint-up(lg){
 		.elementor-column {order:3}
 		.desktop-2 {order:2}

@@ -63,7 +63,7 @@ function RT_setup() {
 
 	// This theme uses wp_nav_menu() in four locations.
 	register_nav_menus( array (
-		'header-menu' => esc_html__( 'Header Menu', 'row_themes' ),
+		'header-menu' => esc_html__( 'Header Menu', 'row_themes' )
 	) );
 
 	// This theme styles the visual editor to resemble the theme style.

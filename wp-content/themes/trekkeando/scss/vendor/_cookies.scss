@@ -1,0 +1,45 @@
+/**
+  VENDOR -- COOKIES
+**/
+
+.cdp-cookies-alerta {
+	.cdp-cookies-texto {
+    	padding: 15px 30px;
+    	display: flex;
+    	justify-content: center;
+		align-items: center;
+
+		p {
+			max-width: 1080px;
+			font-size:12px;
+			font-family: inherit;
+			line-height: 1.2;
+			margin: 0;
+			padding-right: 100px;
+			text-align: left;
+		}
+		a {
+			text-decoration: underline;
+			font-size:1em;
+			font-family: inherit;
+		}
+		.cdp-cookies-boton-cerrar {
+			text-decoration: none;
+			font-weight: $font-weight-medium;
+			border-radius:0;
+			margin: 0 0 0 -75px;
+			line-height: 27px;
+			padding: 0;
+		}
+	}
+
+	&.cdp-cookies-tema-gris .cdp-cookies-texto {
+		background:$color-secondary;
+		border:none;
+
+		p, a {color:white!important;}
+		.cdp-cookies-boton-cerrar {
+			background:$color-primary;
+		}
+	}
+} 
