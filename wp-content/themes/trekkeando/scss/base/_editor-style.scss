@@ -6,9 +6,20 @@ a {
 		text-decoration: underline;
 	}
 }
+h2,h3,h4,h5,h6 {
+	&:first-child {margin-top: 0;}
+}
+h4,h5,h6 {
+	text-transform: none;
+	margin:1em 0;
+}
 h2 {
-	@include rem-units(font-size,22);
-	margin-bottom: 1em;
+	@include rem-units(font-size,24);
+	margin: 2em 0 1em;
+}
+h3 {
+	@include rem-units(font-size,20);
+	margin: 1.5em 0;
 }
 ul {
 	@include ul-style();

@@ -146,6 +146,16 @@
 	}
 }
 
+.typed-cursor {
+    opacity: 1;
+    animation: blink 0.7s infinite;
+}
+.typed-fade-out {
+    opacity: 0;
+    animation: 0;
+    transition: opacity .25s;
+}
+
 
 @keyframes fadeInUp{
 	from{
@@ -176,6 +186,12 @@
 		opacity:1;
 		transform:none;
 	}
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 
