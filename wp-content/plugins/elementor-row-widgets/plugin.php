@@ -5,6 +5,7 @@ namespace RowElementorWidgets;
 use RowElementorWidgets\Widgets\Row_Widgets_Subpages_Grid;
 use RowElementorWidgets\Widgets\Row_Widgets_Related_Content;
 use RowElementorWidgets\Widgets\Row_Widgets_Social_Icons;
+use RowElementorWidgets\Widgets\Row_Widgets_Typing_Effect;
 
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -81,6 +82,15 @@ class Plugin {
     public function register_widget_scripts()
     {
         wp_register_script( 'elementor-row-widgets', plugins_url( '/assets/js/row-widgets.js', __FILE__ ), array('jquery','bootstrap'), '1.0.1' );
+
+        // Typing Effect
+        wp_register_script( 'typedjs', plugins_url( 'assets/libs/typed.js', __FILE__ ), array( 'jquery' ) );
+        wp_register_script(
+            'typing-effect',
+            plugins_url( 'assets/js/typing-effect.js', __FILE__ ),
+            array( 'typedjs' ),
+            '1.0.1'
+        );
     }
 
     /**
@@ -120,6 +130,7 @@ class Plugin {
         require_once __DIR__ . '/widgets/subpages-grid.php';
         require_once __DIR__ . '/widgets/related-content.php';
         require_once __DIR__ . '/widgets/social-icons.php';
+        require_once __DIR__ . '/widgets/typing-effect.php';
 	}
 
 	/**
@@ -135,6 +146,7 @@ class Plugin {
 		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Subpages_Grid() );
 		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Related_Content() );
 		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Social_Icons() );
+		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Typing_Effect() );
 
 		$remove_widgets = array(
 			//'counter',

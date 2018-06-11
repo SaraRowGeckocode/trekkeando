@@ -38,7 +38,7 @@ class Row_Widgets_Related_Content extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'general-elements' ];
+		return [ 'general' ];
 	}
 
 	protected function _register_controls() {

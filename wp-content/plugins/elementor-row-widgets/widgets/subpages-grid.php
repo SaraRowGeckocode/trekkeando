@@ -38,7 +38,7 @@ class Row_Widgets_Subpages_Grid extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'general-elements' ];
+		return [ 'general' ];
 	}
 
 	protected function _register_controls() {
