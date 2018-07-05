@@ -100,6 +100,31 @@ class Row_Widgets_Typing_Effect extends Widget_Base {
 				'label_block' => false,
 			]
 		);
+		$this->add_responsive_control(
+			'align',
+			[
+				'label' => __( 'Alignment', 'elementor-row-widgets' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left'    => [
+						'title' => __( 'Left', 'elementor-row-widgets' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'elementor-row-widgets' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'elementor-row-widgets' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}}' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 
@@ -268,7 +293,7 @@ class Row_Widgets_Typing_Effect extends Widget_Base {
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .press-elements-typing-effect .typing-effect-strings' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .press-elements-typing-effect' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -278,7 +303,7 @@ class Row_Widgets_Typing_Effect extends Widget_Base {
 			[
 				'name' => 'typography',
 				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}} .press-elements-typing-effect .typing-effect-strings',
+				'selector' => '{{WRAPPER}} .press-elements-typing-effect',
 			]
 		);
 

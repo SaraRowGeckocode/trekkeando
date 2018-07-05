@@ -93,7 +93,15 @@ class Row_Widgets_Subpages_Grid extends Widget_Base {
 					$thumb['url'] . ' ' . $thumb['width'].'w',
 					$images_path . $thumb2x['file'] . ' ' . $thumb2x['width'].'w'
 				);
-				$srcset_attr = 'srcset="'. implode (", ", $srcset) .'"';
+
+				$sizes = array(
+					'(min-width: 1200px) 370px', 
+					'(min-width: 992px) 310px',
+					'(min-width: 768px) 345px',
+					'92vw'
+				);
+				$srcset_attr = 'sizes="'. implode (", ", $sizes) .'" '.
+							   'srcset="'. implode (", ", $srcset) .'"';
 			}
 
 			echo '<img '.
