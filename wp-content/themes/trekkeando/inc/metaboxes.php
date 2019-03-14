@@ -9,7 +9,7 @@ function RT_metaboxes( $meta_boxes ) {
         'id' => 'page-grid-fields',
         'title' => __( 'Page Settings (for grid view)', 'row_themes' ),
         'post_types' => array( 'page' ),
-        'context' => 'after_editor',
+        //'context' => 'after_editor',
         'priority' => 'high',
         'autosave' => true,
         'fields' => array(

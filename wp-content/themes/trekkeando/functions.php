@@ -86,6 +86,9 @@ function RT_setup() {
 	// Add theme support Elemento footer
 	add_theme_support( 'header-footer-elementor' );
 
+	// Gutenberg
+	add_theme_support( 'align-wide' );
+
 }
 endif; // RT_setup
 add_action( 'after_setup_theme', 'RT_setup' );
@@ -202,3 +205,27 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom meta boxes for this theme.
  */
 require get_template_directory() . '/inc/metaboxes.php';
+
+
+// Gutenberg
+// Add google fonts to the Gutenberg editor
+function RT_block_editor_fonts() {
+	$fonts_url = '';
+	$abril = esc_html_x( 'on', 'eAbril+Fatfac font: on or off', 'vdv-aprendegutenberg' );
+	if ( 'off' !== $abril ) {
+		$font_families = array();
+		$font_families[] = 'Abril+Fatface:400,400italic,700,700italic';
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+	return $fonts_url;
+}
+
+function RT_block_editor_styles() {
+	// Editor styles.
+  wp_enqueue_style( 'rt-block-editor-styles', get_theme_file_uri( '/editor-style.css' ), false, '1.0', 'all' );
+}
+add_action( 'enqueue_block_editor_assets', 'RT_block_editor_styles' );
