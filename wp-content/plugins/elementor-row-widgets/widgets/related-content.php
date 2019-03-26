@@ -104,12 +104,8 @@ class Row_Widgets_Related_Content extends Widget_Base {
 				);
 
 				// categories selected
-				if($settings['posts_selection']){
+				if($settings['posts_selection'] !== 'random'){
 					$args['category__in'] = $settings['posts_selection'];
-				} 
-				// random posts
-				else {
-					$args['orderby'] = 'rand';
 				}
 
 
