@@ -7,6 +7,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="post-featured-image">
+		<?php the_post_thumbnail() ?>
+	</div>
 
 	<header class="entry-header entry-header-single">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
