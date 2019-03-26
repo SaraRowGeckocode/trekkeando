@@ -11,7 +11,7 @@ body.single-post {
 
 	.site-main {background: white;}
 	
-	@include media-breakpoint-up(md){
+	@include media-breakpoint-up(lg){
 		.site-main {
 			@include make-col(9);
 		}
