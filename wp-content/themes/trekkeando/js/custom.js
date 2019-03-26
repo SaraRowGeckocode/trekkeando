@@ -13,110 +13,126 @@
 
 ( function( $ ) {
 
-	var rowThm = {
-		// home menu
-		homeTopBarInit: function() {
+  var rowThm = {
+    // home menu
+    homeTopBarInit: function() {
 
-			$(window).scroll(function(){
-				var scrolled = $(document).scrollTop();
+      $(window).scroll(function(){
+        var scrolled = $(document).scrollTop();
 
-				if(scrolled > 10){
-					$('#topbar').removeClass('transparent');
-				} else if (scrolled < 10){
-					$('#topbar').addClass('transparent');
-				}
-			}).trigger('scroll');
+        if(scrolled > 10){
+          $('#topbar').removeClass('transparent');
+        } else if (scrolled < 10){
+          $('#topbar').addClass('transparent');
+        }
+      }).trigger('scroll');
 
-		},
+    },
 
-		// Responsive Videos
-		responsiveVideosInit: function() {
-			$( '.entry-content, .sidebar' ).fitVids();
-		},
+    // Responsive Videos
+    responsiveVideosInit: function() {
+      $( '.entry-content, .sidebar' ).fitVids();
+    },
 
-		// Responsive Menu
-		responsiveMenuInit: function() {
+    // Responsive Menu
+    responsiveMenuInit: function() {
 
-			// Add dropdown toggle that display child menu items.
-			$( '#header-menu .menu-item-has-children > a' ).append( '<button class="dropdown-toggle" aria-expanded="false"/>' );
-			$( '#header-menu .dropdown-toggle' ).off( 'click' ).on( 'click', function( e ) {
-				e.preventDefault();
-				$( this ).toggleClass( 'toggle-on' );
-				$( this ).parent().next( '.children, .sub-menu' ).toggleClass( 'toggle-on' );
-				$( this ).attr( 'aria-expanded', $( this ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-			} );
+      // Add dropdown toggle that display child menu items.
+      $( '#header-menu .menu-item-has-children > a' ).append( '<button class="dropdown-toggle" aria-expanded="false"/>' );
+      $( '#header-menu .dropdown-toggle' ).off( 'click' ).on( 'click', function( e ) {
+        e.preventDefault();
+        $( this ).toggleClass( 'toggle-on' );
+        $( this ).parent().next( '.children, .sub-menu' ).toggleClass( 'toggle-on' );
+        $( this ).attr( 'aria-expanded', $( this ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+      } );
 
-		},
+    },
 
-		// Open Slide Panel - Responsive Mobile Menu
-		slidePanelInit: function() {
+    // Open Slide Panel - Responsive Mobile Menu
+    slidePanelInit: function() {
 
-			// Elements
-			var menuResponsive      = $( '#header-menu' ),
-				toggleMenuBtn 		= $( '.toggle-menu' );
+      // Elements
+      var menuResponsive      = $( '#header-menu' ),
+        toggleMenuBtn     = $( '.toggle-menu' );
 
-			// Responsive Menu Slide
-			$(toggleMenuBtn).off( 'click' ).on( 'click', function( e ) {
+      // Responsive Menu Slide
+      $(toggleMenuBtn).off( 'click' ).on( 'click', function( e ) {
 
-				// Prevent Default
-				e.preventDefault();
-				e.stopPropagation();
+        // Prevent Default
+        e.preventDefault();
+        e.stopPropagation();
 
-				// ToggleClass
-				$('body').toggleClass( 'mobile-nav-open' );
-			} );
-		},
+        // ToggleClass
+        $('body').toggleClass( 'mobile-nav-open' );
+      } );
+    },
 
-		// Media Queries
-		mqInit: function() {
+    // Media Queries
+    mqInit: function() {
 
-			enquire.register( 'screen and ( max-width: 767.99px )' , {
+      enquire.register( 'screen and ( max-width: 767.99px )' , {
 
-			    deferSetup : true,
-			    setup : function() {
+          deferSetup : true,
+          setup : function() {
 
-			        // Responsive Menu
-					rowThm.responsiveMenuInit();
+              // Responsive Menu
+          rowThm.responsiveMenuInit();
 
-			    },
-			    match : function() {
+          },
+          match : function() {
 
-					// Sliding Panels for Menu
-					rowThm.slidePanelInit();
+          // Sliding Panels for Menu
+          rowThm.slidePanelInit();
 
-					// Responsive Tables
-					$( '.entry-content, .sidebar' ).find( 'table' ).wrap( '<div class="table-responsive"></div>' );
+          // Responsive Tables
+          $( '.entry-content, .sidebar' ).find( 'table' ).wrap( '<div class="table-responsive"></div>' );
 
-			    },
-			    unmatch : function() {
+          },
+          unmatch : function() {
 
-					// Responsive Tables Undo
-					$( '.entry-content, .sidebar' ).find( 'table' ).unwrap( '<div class="table-responsive"></div>' );
+          // Responsive Tables Undo
+          $( '.entry-content, .sidebar' ).find( 'table' ).unwrap( '<div class="table-responsive"></div>' );
 
-			    }
+          }
 
-			});
+      });
+    },
 
-		}
+    // test browser css properties support
+    testCssProp: function(property) {
+      return property in document.body.style;
+    },
 
-	};
+    // css properties to test
+    cssSupport: function(){
+      var props = ['object-fit'];
 
-	// Document Ready
-	$( document ).ready( function() {
+      $.each(props, function( index, value ){
+        if(! rowThm.testCssProp(value)) $('html').addClass('no-'+value);
+      })
+    }
 
-		// Menu
-		if($('body').hasClass('home'))
-			rowThm.homeTopBarInit();
+  };
 
-		// Responsive Videos
-		rowThm.responsiveVideosInit();
+  // Document Ready
+  $( document ).ready( function() {
 
-		// Sliding Panels for Menu and Sidebar
-		rowThm.slidePanelInit();
+    // Menu
+    if($('body').hasClass('home'))
+      rowThm.homeTopBarInit();
 
-	    // Media Queries
-	    rowThm.mqInit();
+    // Responsive Videos
+    rowThm.responsiveVideosInit();
 
-	} );
+    // Sliding Panels for Menu and Sidebar
+    rowThm.slidePanelInit();
+
+    // Media Queries
+    rowThm.mqInit();
+
+    // Test css propperties
+    rowThm.cssSupport();
+
+  } );
 
 } )( jQuery );
