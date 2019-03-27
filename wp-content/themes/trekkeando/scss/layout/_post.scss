@@ -59,7 +59,7 @@ body.single-post {
 	
 	/* Entry Content */
 	.entry-content {
-		@include rem-units(font-size,18);
+		@include rem-units(font-size,16);
 		line-height:1.5;
 	}
 
@@ -70,6 +70,10 @@ body.single-post {
 		&.has-post-thumbnail .post-featured-image {
 			margin: -80px -40px 30px;
 			height: 400px;
+		}
+
+		.entry-content {
+			@include rem-units(font-size,18);
 		}
 	}
 
