@@ -119,7 +119,7 @@ function RT_scripts() {
 
 	// Theme Stylesheet
 	wp_enqueue_style( 'trekkeando-fonts', 'https://fonts.googleapis.com/css?family=Raleway:300,300i,600,800,900', array(), '1.0.0' );
-	wp_enqueue_style( 'trekkeando', get_stylesheet_uri(), array('trekkeando-fonts'), '1.0.2' );
+	wp_enqueue_style( 'trekkeando', get_stylesheet_uri(), array('trekkeando-fonts'), '1.0.3' );
 
 
 	/**
