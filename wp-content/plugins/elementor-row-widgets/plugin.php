@@ -19,26 +19,26 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 class Plugin {
 
-	/**
-	 * Constructor
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 */
-	public function __construct() {
-		$this->add_actions();
-	}
+  /**
+   * Constructor
+   *
+   * @since 1.0.0
+   *
+   * @access public
+   */
+  public function __construct() {
+    $this->add_actions();
+  }
 
-	/**
-	 * Add Actions
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access private
-	 */
-	private function add_actions() {
-		// Add New Elementor Categories
+  /**
+   * Add Actions
+   *
+   * @since 1.0.0
+   *
+   * @access private
+   */
+  private function add_actions() {
+    // Add New Elementor Categories
         add_action( 'elementor/init', array( $this, 'add_elementor_category' ) );
 
         // Register Widget Scripts
@@ -50,9 +50,9 @@ class Plugin {
 
         // Register New Widgets
         add_action( 'elementor/widgets/widgets_registered', array( $this, 'on_widgets_registered' ) );
-	}
+  }
 
-	/**
+  /**
      * Add Elementor Categories
      *
      * @since 1.0.0
@@ -61,8 +61,8 @@ class Plugin {
      */
     public function add_elementor_category()
     {
-    	/*
-    	$elements_manager = \Elementor\Plugin::instance()->elements_manager;
+      /*
+      $elements_manager = \Elementor\Plugin::instance()->elements_manager;
         $elements_manager->add_category( 'row-widgets-post-elements', array(
             'title' => __( 'Page/Project Info', 'elementor-row-widgets' ),
         ), 1 );
@@ -107,72 +107,74 @@ class Plugin {
         wp_enqueue_style( 'typing-effect' );*/
     }
 
-	/**
-	 * On Widgets Registered
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 */
-	public function on_widgets_registered() {
-		$this->includes();
-		$this->register_widget();
-	}
+  /**
+   * On Widgets Registered
+   *
+   * @since 1.0.0
+   *
+   * @access public
+   */
+  public function on_widgets_registered() {
+    $this->includes();
+    $this->register_widget();
+  }
 
-	/**
-	 * Includes
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access private
-	 */
-	private function includes() {
+  /**
+   * Includes
+   *
+   * @since 1.0.0
+   *
+   * @access private
+   */
+  private function includes() {
         require_once __DIR__ . '/widgets/subpages-grid.php';
         require_once __DIR__ . '/widgets/related-content.php';
         require_once __DIR__ . '/widgets/social-icons.php';
         require_once __DIR__ . '/widgets/typing-effect.php';
-	}
+  }
 
-	/**
-	 * Register Widget
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access private
-	 */
-	private function register_widget() {
-		$widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
+  /**
+   * Register Widget
+   *
+   * @since 1.0.0
+   *
+   * @access private
+   */
+  private function register_widget() {
+    $widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
 
-		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Subpages_Grid() );
-		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Related_Content() );
-		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Social_Icons() );
-		$widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Typing_Effect() );
+    $widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Subpages_Grid() );
+    $widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Related_Content() );
+    $widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Social_Icons() );
+    $widgets_manager->register_widget_type( new \RowElementorWidgets\Widgets\Row_Widgets_Typing_Effect() );
 
-		$remove_widgets = array(
-			//'counter',
-			//'progress',
-			'audio',
-			//'accordion',
-			'social-icons', // it breaks when custom icons added
-			'wp-widget-pages',
-			'wp-widget-archives',
-			'wp-widget-media_audio',
-			'wp-widget-media_image',
-			'wp-widget-media_gallery',
-			'wp-widget-meta',
-			'wp-widget-text',
-			//'wp-widget-categories',
-			//'wp-widget-recent-posts',
-			//'wp-widget-recent-comments',
-			'wp-widget-rss',
-			//'wp-widget-tag_cloud',
-			'wp-widget-custom_html',
-			'wp-widget-calendar'
-		);
-		foreach($remove_widgets as $widget){
-			$widgets_manager->unregister_widget_type($widget);
-		}
-	}
+    $remove_widgets = array(
+      //'counter',
+      //'progress',
+      'audio',
+      //'accordion',
+      'social-icons', // it breaks when custom icons added
+      'star-rating',
+      'read-more',
+      'wp-widget-pages',
+      'wp-widget-archives',
+      'wp-widget-media_audio',
+      'wp-widget-media_image',
+      'wp-widget-media_gallery',
+      'wp-widget-meta',
+      'wp-widget-text',
+      //'wp-widget-categories',
+      //'wp-widget-recent-posts',
+      //'wp-widget-recent-comments',
+      'wp-widget-rss',
+      //'wp-widget-tag_cloud',
+      'wp-widget-custom_html',
+      'wp-widget-calendar'
+    );
+    foreach($remove_widgets as $widget){
+      $widgets_manager->unregister_widget_type($widget);
+    }
+  }
 }
 
 new Plugin();
