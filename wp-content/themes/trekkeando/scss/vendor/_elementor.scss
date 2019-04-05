@@ -52,9 +52,18 @@
 	.elementor-button {
 		border-radius:0;
 		background-color: $color-secondary;
+		display:inline-block;
+		padding: 1em 1.8em;
+		font-weight:$font-weight-bold;
+		line-height:1;
+		text-align:center;
+		text-decoration:none;
+		text-transform: uppercase;
+		letter-spacing: 0.07em;
+		transition:all .3s ease-out;
 
 		&.elementor-size-sm {
-			@include button($color-secondary, white, $color-secondary);
+			font-size:.88rem;
 		}
 	}
 
