@@ -409,7 +409,7 @@ class Row_Widgets_Social_Icons extends Widget_Base {
 					$this->add_render_attribute( $link_key, 'rel', 'nofollow' );
 				}
 				?>
-				<a class="elementor-icon elementor-social-icon elementor-social-icon-<?php echo $social . $class_animation; ?>" <?php echo $this->get_render_attribute_string( $link_key ); ?>>
+				<a class="elementor-icon elementor-social-icon elementor-social-icon-<?php echo $social; ?>" <?php echo $this->get_render_attribute_string( $link_key ); ?>>
 					<span class="elementor-screen-only"><?php echo ucwords( $social ); ?></span>
 					<i class="<?php echo $item['social']; ?>"></i>
 				</a>

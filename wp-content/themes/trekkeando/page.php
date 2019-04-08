@@ -15,7 +15,7 @@ get_header();
 
 while ( have_posts() ) : the_post(); 
 
-	if ( RT_has_Elementor_layout( $post->ID ) ) {
+	if ( is_admin() || RT_has_Elementor_layout( $post->ID ) ) {
 		
 		the_content();
 
